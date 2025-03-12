@@ -49,6 +49,7 @@
                 </nav>
             @endif
         </header>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.967324956347!2d11.643876477362426!3d45.22822864915083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477f1df0032b1ec3%3A0x6e0dc491eb2878f3!2sFioreria%20e%20Onoranze%20Funebri%20Angelica!5e0!3m2!1sit!2sit!4v1741772714527!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
                 <div class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
