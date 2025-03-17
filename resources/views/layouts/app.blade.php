@@ -23,9 +23,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+          @guest
           <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Registrati</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Accedi</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Accedi</a></li>
+          @endguest
+          @auth
+          <li class="nav-item">
+            <form action="{{route('logoutUser')}}" method="post">
+              @csrf
+              <button type="submit" class="btn">Logut</button>
+            </form>
+          </li>
+          @endauth
         </ul>
       </div>
     </div>

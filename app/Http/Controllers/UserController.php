@@ -31,4 +31,35 @@ class UserController extends Controller
         return redirect()->route('home')->with('success', 'Registrazione avvenuta con successo! Sei stato loggato automaticamente');
 
     }
+
+    public function showLoginForm(){
+        return view('login');
+    }
+
+    public function login(Request $request){
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+
+            return redirect()->intended('/')->with('success','Login effettuato con successo');
+        }
+
+        return back()->withErrors([
+            'email' => 'Le credenziali fornite non sono corrette',
+        ])->onlyInput('email');
+
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('success','Logout effettuato con successo');
+    }
+
 }
