@@ -34,7 +34,7 @@
             will-change: transform;
         }
         body {
-            background-image: url('images/Parco.jpg');
+            background-color: #F7CEAB;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -145,8 +145,26 @@
                     <li class="nav-item"><a class="nav-link" href="#">San Valentino</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Giardinaggio</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="#">LOGIN</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">REGISTER</a></li>
+                    @auth
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <?php
+                            $user = Auth::user();
+                            print("Ciao ".$user->name);
+                            ?>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                    <form action="{{route('logoutUser')}}" method="post">
+                    @csrf
+                    <button type="submit" class="btn">Logout</button>
+                    </form>
+                    </li>
+                    @else
+                        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">LOGIN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">REGISTER</a></li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -155,7 +173,7 @@
     <div class="wrapper">
         <div class="content">
             <header class="hero-section">
-				<img data-speed=".6" class="hero" src="{{ asset('storage/images/bouquet.jpg') }}" alt="Alt" >
+				<img data-speed=".6" class="hero" src="{{ URL('images/bouquet.png') }}" alt="Alt" >
 				<div class="container">
 					<div data-speed=".75" class="main-header">
 						<h1 class="main-title">Startup Fiori</h1>
@@ -168,7 +186,7 @@
                     <div data-speed=".9" class="gallery__left col-md-6">
 
                         <a href="#">
-                            <img class="gallery__item" src="{{ asset('storage/images/matrimonio.jpg') }}" alt="Alt">
+                            <img class="gallery__item" src="{{ URL('images/work/matrimonio.jpg') }}" alt="Alt">
                         </a>
 
                         <div class="text-block gallery__item">
@@ -177,7 +195,7 @@
                         </div>
 
                         <a href="#">
-                            <img class="gallery__item" src="{{ asset('storage/images/battesimo.jpg') }}" alt="Alt">
+                            <img class="gallery__item" src="{{ URL('images/work/battesimo.jpg') }}" alt="Alt">
                         </a>
 
                         <div class="text-block gallery__item">
@@ -186,7 +204,7 @@
                         </div>
 
                         <a href="#">
-                            <img class="gallery__item" src="{{ asset('storage/images/giardinaggio.jpg') }}" alt="Alt">
+                            <img class="gallery__item" src="{{ URL('images/work/giardinaggio.jpg') }}" alt="Alt">
                         </a>
                     </div>
 
@@ -198,7 +216,7 @@
                         </div>
 
                         <a href="#">
-                            <img class="gallery__item" src="{{ asset('storage/images/funerale.jpg') }}" alt="Alt">
+                            <img class="gallery__item" src="{{ URL('images/work/funerale.jpg') }}" alt="Alt">
                         </a>
                         <div class="text-block gallery__item">
                             <h2 class="text-block__h">SCEGLI I FIORI CHE SI ABBINANO DI PIU' AL TUO SOGNO</h2>
@@ -206,7 +224,7 @@
                         </div>
 
                         <a href="#">
-                            <img class="gallery__item" src="{{ asset('storage/images/sanvalentino.jpg') }}" alt="Alt">
+                            <img class="gallery__item" src="{{ URL('images/work/sanvalentino.jpg') }}" alt="Alt">
                         </a>
 
                         <div class="text-block gallery__item">
