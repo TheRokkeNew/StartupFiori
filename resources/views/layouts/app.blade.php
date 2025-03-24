@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="it">
+<style>
+  .navbar {
+    padding-top: 5px;  
+    padding-bottom: 5px; 
+    height: 50px;
+  }
+</style>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@yield('title', 'Bouquet Startup')</title>
+  <title>@yield('title', 'Occasione')</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -16,7 +23,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="">
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" width="100">
+        <!-- <img src="{{ asset('images/logo.png') }}" alt="Logo" width="100"> -->
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -24,15 +31,11 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-          @guest
-          <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Registrati</a></li>
-          <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Accedi</a></li>
-          @endguest
           @auth
           <li class="nav-item">
             <form action="{{route('logoutUser')}}" method="post">
               @csrf
-              <button type="submit" class="btn">Logut</button>
+              <button type="submit" class="btn">Logout</button>
             </form>
           </li>
           @endauth
@@ -47,11 +50,11 @@
   </main>
 
   <!-- Footer -->
-  <footer class="py-4 bg-light">
+  <!--<footer class="py-4 bg-light">
     <div class="container text-center">
-      <p class="mb-0">© 2023 Bouquet Startup. Tutti i diritti riservati.</p>
+      <p class="mb-0">© 2025 Startup Fiori - Tutti i diritti riservati.</p>
     </div>
-  </footer>
+  </footer>-->
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

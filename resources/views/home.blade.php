@@ -139,10 +139,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">Catalogo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Matrimonio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Funerale</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Battesimo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">San Valentino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/matrimonio') }}">Matrimonio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/funerale') }}">Funerale</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/battesimo') }}">Battesimo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/san_valentino') }}">San Valentino</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Giardinaggio</a></li>
 
                     @auth
@@ -185,22 +185,22 @@
                 <main class="gallery row">
                     <div data-speed=".9" class="gallery__left col-md-6">
 
-                        <a href="#">
+                        <a href="{{ url('/occasione/matrimonio') }}">
                             <img class="gallery__item" src="{{ URL('images/work/matrimonio.jpg') }}" alt="Alt">
                         </a>
 
                         <div class="text-block gallery__item">
-                            <h2 class="text-block__h">SCEGLI I FIORI CHE SI ABBINANO DI PIU' AL TUO SOGNO</h2>
-                            <p class="text-block__p">Abbiamo un quantità industriale di fiori per te e per le tue nozze!</p>
+                            <h2 class="text-block__h">UN OMAGGIO DI PACE E SERENITÀ!</h2>
+                            <p class="text-block__p">Onora la memoria di una persona speciale con un bouquet che esprime rispetto e amore</p>
                         </div>
 
-                        <a href="#">
+                        <a href="{{ url('/occasione/battesimo') }}">
                             <img class="gallery__item" src="{{ URL('images/work/battesimo.jpg') }}" alt="Alt">
                         </a>
 
                         <div class="text-block gallery__item">
-                            <h2 class="text-block__h">SCEGLI I FIORI CHE SI ABBINANO DI PIU' AL TUO SOGNO</h2>
-                            <p class="text-block__p">Abbiamo un quantità industriale di fiori per te e per le tue nozze!</p>
+                            <h2 class="text-block__h">FIORI CHE PARLANO D'AMORE!</h2>
+                            <p class="text-block__p">Un gesto romantico per San Valentino: fiori che riscaldano il cuore</p>
                         </div>
 
                         <a href="#">
@@ -211,19 +211,19 @@
                     <div data-speed="1.1" class="gallery__right col-md-6">
 
                         <div class="text-block gallery__item">
-                            <h2 class="text-block__h">SCEGLI I FIORI CHE SI ABBINANO DI PIU' AL TUO SOGNO</h2>
-                            <p class="text-block__p">Abbiamo un quantità industriale di fiori per te e per le tue nozze!</p>
+                            <h2 class="text-block__h">UN BOUQUET DI FELICITÀ PER LA VOSTRA VITA INSIEME!</h2>
+                            <p class="text-block__p">Ogni fiore racconta la storia del vostro amore: trova il bouquet perfetto per il vostro matrimonio</p>
                         </div>
 
-                        <a href="#">
+                        <a href="{{ url('/occasione/funerale') }}">
                             <img class="gallery__item" src="{{ URL('images/work/funerale.jpg') }}" alt="Alt">
                         </a>
                         <div class="text-block gallery__item">
-                            <h2 class="text-block__h">SCEGLI I FIORI CHE SI ABBINANO DI PIU' AL TUO SOGNO</h2>
-                            <p class="text-block__p">Abbiamo un quantità industriale di fiori per te e per le tue nozze!</p>
+                            <h2 class="text-block__h">UN DONO PROFUMATO PER UN PICCOLO ANGELO!</h2>
+                            <p class="text-block__p">Celebra la nuova vita con un bouquet che simboleggia purezza e gioia</p>
                         </div>
 
-                        <a href="#">
+                        <a href="{{ url('/occasione/san_valentino') }}">
                             <img class="gallery__item" src="{{ URL('images/work/sanvalentino.jpg') }}" alt="Alt">
                         </a>
 
