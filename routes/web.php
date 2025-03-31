@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OccasionController;
+use App\Http\Controllers\FlowerController;
 
 Route::get('/', function () {
     return view('home');
@@ -20,3 +21,8 @@ Route::post('/logout',[UserController::class,'logout'])->name('logoutUser');
 
 //pagina per ogni occasione 
 Route::get('/occasione/{tipo}', [OccasionController::class, 'show']);
+
+//catalogo
+Route::get('/catalogo', [FlowerController::class, 'index'])->name('catalogo');
+//fiore nel catalogo
+Route::get('/flowers/{id}', [FlowerController::class, 'show'])->name('flowers.show');
