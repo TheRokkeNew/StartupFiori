@@ -138,7 +138,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Catalogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/catalogo') }}">Catalogo</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/matrimonio') }}">Matrimonio</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/funerale') }}">Funerale</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/battesimo') }}">Battesimo</a></li>
