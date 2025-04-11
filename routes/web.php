@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OccasionController;
 use App\Http\Controllers\FlowerController;
+use App\Http\Controllers\PotaturaController;
+
 
 Route::get('/', function () {
     return view('home');
@@ -26,3 +28,11 @@ Route::get('/occasione/{tipo}', [OccasionController::class, 'show']);
 Route::get('/catalogo', [FlowerController::class, 'index'])->name('catalogo');
 //fiore nel catalogo
 Route::get('/flowers/{id}', [FlowerController::class, 'show'])->name('flowers.show');
+
+//calendario potatura e innesti 
+Route::get('/giardinaggio', function () {
+    return view('giardinaggio'); 
+}) ->name('giardinaggio');
+
+Route::get('/potatura', [PotaturaController::class, 'index'])->name('potatura');
+
