@@ -6,6 +6,9 @@
     padding-bottom: 5px; 
     height: 50px;
   }
+  .bg-classic{
+    background-color:rgb(248, 112, 189);
+  }
 </style>
 <head>
   <meta charset="UTF-8">
@@ -22,15 +25,10 @@
   <!-- Header -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="">
-        <!-- <img src="{{ asset('images/logo.png') }}" alt="Logo" width="100"> -->
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <a class="navbar-brand" href="{{route('home')}}">Startup Fiori</a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li> -->
           @auth
           <li class="nav-item">
             <form action="{{route('logoutUser')}}" method="post">
@@ -39,6 +37,10 @@
             </form>
           </li>
           @endauth
+          @guest
+          <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+          @endguest
         </ul>
       </div>
     </div>

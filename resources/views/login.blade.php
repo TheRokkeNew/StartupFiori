@@ -3,11 +3,20 @@
 @section('title', 'Login') <!-- Imposta il titolo della pagina -->
 
 @section('content') <!-- Inizia la sezione del contenuto -->
+<style>
+    body{
+    background-color: #F7CEAB;
+  }
+  .bg-classic{
+    background-color:rgb(248, 112, 189);
+  }
+</style>
+
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card shadow">
-        <div class="card-header bg-primary text-white text-center">
+        <div class="card-header text-white text-center bg-classic" >
           <h3>Accedi</h3>
         </div>
         <div class="card-body">
@@ -33,8 +42,8 @@
             </div>
 
             <!-- Pulsante di Accesso -->
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary">Accedi</button>
+            <div class="d-grid ">
+              <button type="submit" class="btn bg-classic">Accedi</button>
             </div>
 
             <!-- Link per la Registrazione -->

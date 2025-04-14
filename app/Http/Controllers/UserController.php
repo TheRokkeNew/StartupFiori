@@ -62,4 +62,25 @@ class UserController extends Controller
         return redirect('/')->with('success','Logout effettuato con successo');
     }
 
+    public function uploadImage(Request $request){
+        dd('CI SONO');
+        $request->validate([
+            'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $user = Auth::user();
+        
+        if($user->profile_image){
+            Storage::delete('public/' .$user->profile_image);
+        }
+
+        $path = $request->file('profile_image')->store('profile_images','public');
+
+        $user->profile_image = $path;
+        $user->save();    
+        
+        return redirect()->route('home')->with('success','Immagine del profilo caricata con successo');
+
+    }
+
 }

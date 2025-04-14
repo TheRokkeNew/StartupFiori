@@ -20,6 +20,7 @@ Route::post('/login',[UserController::class,'login'])->name('loginUser');
 
 Route::post('/logout',[UserController::class,'logout'])->name('logoutUser');
 
+Route::post('/upload-image',[UserController::class,'uploadImage'])->name('upload.image');
 
 //pagina per ogni occasione 
 Route::get('/occasione/{tipo}', [OccasionController::class, 'show']);

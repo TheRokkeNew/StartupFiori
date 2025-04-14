@@ -121,6 +121,7 @@
             text-align: center;
             padding: 10px 0;
         }
+
         .social-icons a {
             margin: 0 10px;
             color: white;
@@ -152,6 +153,13 @@
                             $user = Auth::user();
                             print("Ciao ".$user->name);
                             ?>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                        @if(Auth::user()->profile_image)
+                            <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="Immagine profilo" style="max-width: 200px;">
+                        @endif
                         </a>
                     </li>
 

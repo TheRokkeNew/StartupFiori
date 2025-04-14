@@ -3,11 +3,19 @@
 @section('title', 'Registrazione') <!-- Imposta il titolo della pagina -->
 
 @section('content') <!-- Inizia la sezione del contenuto -->
+<style>
+    body{
+    background-color: #F7CEAB;
+  }
+  .bg-classic{
+    background-color:rgb(248, 112, 189);
+  }
+</style>
 <div class="container py-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card shadow">
-        <div class="card-header bg-primary text-white text-center">
+        <div class="card-header bg-classic text-white text-center">
           <h3>Registrati</h3>
         </div>
         <div class="card-body">
@@ -55,10 +63,15 @@
               <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
             </div>
 
-            <!-- Pulsante di Registrazione -->
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary">Registrati</button>
+            <div class="mb-3">
+              <form action="{{route('upload.image') }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <label for="profile_image">Carica la tua immagine:</label>
+                <input type="file" name="profile_image" id="profile_image" required>
+                <div class="d-grid"><button type="submit" class="btn bg-classic">Registrati e carica Immagine</button></div>
+              </form>
             </div>
+
 
           </form>
         </div>
