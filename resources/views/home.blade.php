@@ -148,7 +148,7 @@
 
                     @auth
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('showUserProfile')}}" class="nav-link">
                             <?php
                             $user = Auth::user();
                             print("Ciao ".$user->name);
@@ -156,9 +156,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{route('showUserProfile')}}" class="nav-link">
                         @if(Auth::user()->profile_image)
-                            <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" alt="Immagine profilo" style="max-width: 200px;">
+                        <img src="{{ asset('storage/' . Auth::user()->profile_image) }}" class="rounded-circle" style="width: 25px; height: 25px; object-fit: cover; border-radius: 50%;" alt="Avatar">
                         @endif
                         </a>
                     </li>

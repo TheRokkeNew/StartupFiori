@@ -2,7 +2,7 @@
 @section('content')
 <style>
     body {
-        background-color: #F7CEAB;
+        background-color:rgba(247, 207, 171, 0.55);
         overflow: hidden;
     }
     .img-fluid {

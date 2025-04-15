@@ -6,11 +6,47 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
 
 class UserController extends Controller
 {
     public function showRegistrationForm(){
         return view('register');
+    }
+
+    public function showUserProfile(){
+
+        if(!Auth::check()){
+            return redirect()->route('login')->with('error','Devi essere loggato per accedere a questa pagina');
+        }
+        return view('userProfile');
+    }
+
+    public function updateUserProfile(Request $request){
+        if(!Auth::check()){
+            return redirect()->route('login')->with('error','Devi essere loggato per accedere a questa pagina');
+        }
+        $validateData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email, '.Auth::id(),
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
+
+        $user = Auth::user();
+        $updateData = [
+            'name' => $validateData['name'],
+            'email' => $validateData['email'],
+        ];
+
+        if(!empty($validateData['password'])){
+            $updateData['password'] = Hash::make($validateData['password']);
+        }
+        $user->update($updateData);
+
+        Auth::setUser($user->fresh());
+
+        return redirect()->route('showUserProfile')->with('success','Profilo aggiornato con successo');
     }
 
     public function register(Request $request){
@@ -63,10 +99,14 @@ class UserController extends Controller
     }
 
     public function uploadImage(Request $request){
-        dd('CI SONO');
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'profile_image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+        
+        if ($validator->fails()) {
+            dd($validator->errors()->all());
+        }
+        
 
         $user = Auth::user();
         

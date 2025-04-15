@@ -18,6 +18,9 @@ Route::post('/register',[UserController::class, 'register'])->name('registerUser
 Route::get('/login',[UserController::class,'showLoginForm'])->name('login');
 Route::post('/login',[UserController::class,'login'])->name('loginUser');
 
+Route::get('/userProfile',[UserController::class,'showUserProfile'])->name('showUserProfile');
+Route::post('/userProfile',[UserController::class,'updateUserProfile'])->name('updateUserProfile');
+
 Route::post('/logout',[UserController::class,'logout'])->name('logoutUser');
 
 Route::post('/upload-image',[UserController::class,'uploadImage'])->name('upload.image');

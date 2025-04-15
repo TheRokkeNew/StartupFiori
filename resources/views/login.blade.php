@@ -5,7 +5,7 @@
 @section('content') <!-- Inizia la sezione del contenuto -->
 <style>
     body{
-    background-color: #F7CEAB;
+      background-color:rgba(247, 207, 171, 0.55);
   }
   .bg-classic{
     background-color:rgb(248, 112, 189);
