@@ -77,10 +77,6 @@
                 </div>
                 <div class="card-body">
                     <div class="d-flex justify-content-between py-2 border-bottom">
-                        <span>Ordini</span>
-                        <span class="fw-bold">12</span>
-                    </div>
-                    <div class="d-flex justify-content-between py-2 border-bottom">
                         <span>Preferiti</span>
                         <span class="fw-bold">5</span>
                     </div>
