@@ -133,7 +133,7 @@
     <!-- Navbar fissa -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Startup Fiori</a>
+            <a class="navbar-brand" href="#">FlowerFormula</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -184,7 +184,7 @@
 				<img data-speed=".6" class="hero" src="{{ URL('images/bouquet.png') }}" alt="Alt" >
 				<div class="container">
 					<div data-speed=".75" class="main-header">
-						<h1 class="main-title">Startup Fiori</h1>
+						<h2 class="main-title">FlowerFormula</h2>
 					</div>
 				</div>
 			</header>
@@ -211,7 +211,7 @@
                             <p class="text-block__p">Un gesto romantico per San Valentino: fiori che riscaldano il cuore</p>
                         </div>
 
-                        <a href="#">
+                        <a href="{{ url('/giardinaggio ') }}">
                             <img class="gallery__item" src="{{ URL('images/work/giardinaggio.jpg') }}" alt="Alt">
                         </a>
                     </div>
@@ -236,8 +236,8 @@
                         </a>
 
                         <div class="text-block gallery__item">
-                            <h2 class="text-block__h">SCEGLI I FIORI CHE SI ABBINANO DI PIU' AL TUO SOGNO</h2>
-                            <p class="text-block__p">Abbiamo un quantità industriale di fiori per te e per le tue nozze!</p>
+                            <h2 class="text-block__h">CURA DEL VERDE: TUTTO QUELLO CHE TI SERVE</h2>
+                            <p class="text-block__p">La potatura giusta al momento giusto fa la differenza: ecco i nostri consigli!</p>
                         </div>
                     
                     </div>
@@ -248,7 +248,7 @@
     
     <!-- Footer fisso -->
     <footer class="footer">
-        <p>&copy; 2025 Startup Fiori - Tutti i diritti riservati</p>
+        <p>&copy; 2025 FlowerFormula - Tutti i diritti riservati</p>
         <div class="social-icons">
             <a href="#"><i class="bi bi-facebook"></i></a>
             <a href="#"><i class="bi bi-instagram"></i></a>

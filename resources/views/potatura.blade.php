@@ -2,23 +2,28 @@
 
 @section('content')
 <style>
+    /* Nascondi la navbar */
     .navbar {
         display: none !important;
     }
+    /* Stile sfondo pagina */
     body {
         background-color: #f5fffa;
     }
+    /* Stile tabella principale */
     table {
         table-layout: auto !important;
         max-width: 100%;
         border-collapse: collapse; 
         border: 2px solid #aaa; 
     }
+    /* Stile celle tabella */
     th, td {
-        white-space: nowrap; 
+        white-space: nowrap; /* Evita il wrapping del testo */
         vertical-align: middle;
         border: 3px solid #aaa;
     }
+    /* Stile immagini delle piante */
     .img-pianta {
         width: 87px;
         height: 87px;
@@ -27,57 +32,74 @@
         border: none;
         background: none;
     }
+    /* Classe per colonne nascoste */
     .hidden-column {
         display: none;
     }
 </style>
+
 <div class="container my-4 body-bg">
+    <!-- Titolo principale -->
     <h2 class="mb-4 text-center">Calendario della Potatura</h2>
+    
+    <!-- Box informativo con suggerimenti -->
     <div class="alert alert-info">
         ✅ <strong>Alberi da frutto:</strong> Inverno (potatura di formazione) o estate (diradamento)<br>
         ✅ <strong>Piante da fiore:</strong> Dopo la fioritura per non perdere i boccioli<br>
         ✅ <strong>Sempreverdi:</strong> Fine inverno/inizio primavera (Marzo-Aprile)<br>
         ❌ <strong>Da evitare:</strong> Potature in autunno (rischio di gelate e malattie)
     </div>
+    
+    <!-- Sezione filtri -->
     <div class="mb-3 text-center">
-            <h5>Filtra per Mese:</h5>
-            <form id="filter-form">
-                <select name="month" class="form-select">
-                    <option value="">Tutti</option>
-                    <option value="Gen">Gen</option>
-                    <option value="Feb">Feb</option>
-                    <option value="Mar">Mar</option>
-                    <option value="Apr">Apr</option>
-                    <option value="Mag">Mag</option>
-                    <option value="Giu">Giu</option>
-                    <option value="Lug">Lug</option>
-                    <option value="Ago">Ago</option>
-                    <option value="Set">Set</option>
-                    <option value="Ott">Ott</option>
-                    <option value="Nov">Nov</option>
-                </select>
-                <button type="submit" class="btn btn-success w-100 mt-3">Filtra</button>
-                <button type="reset" id="reset-filters" class="btn btn-secondary w-100 mt-2">Reset Filtri</button>
-            </form>
+        <h5>Filtra per Mese:</h5>
+        <form id="filter-form">
+            <!-- Dropdown per selezione mese -->
+            <select name="month" class="form-select">
+                <option value="">Tutti</option>
+                <option value="Gen">Gen</option>
+                <option value="Feb">Feb</option>
+                <option value="Mar">Mar</option>
+                <option value="Apr">Apr</option>
+                <option value="Mag">Mag</option>
+                <option value="Giu">Giu</option>
+                <option value="Lug">Lug</option>
+                <option value="Ago">Ago</option>
+                <option value="Set">Set</option>
+                <option value="Ott">Ott</option>
+                <option value="Nov">Nov</option>
+            </select>
+            <!-- Pulsanti azione -->
+            <button type="submit" class="btn btn-success w-100 mt-3">Filtra</button>
+            <button type="reset" id="reset-filters" class="btn btn-secondary w-100 mt-2">Reset Filtri</button>
+        </form>
     </div>
+    
+    <!-- Tabella calendario -->
     <div class="table-responsive" style="overflow-x: auto;">
         <table class="table table-bordered text-center align-middle">
             <thead class="table-success">
                 <tr>
+                    <!-- Intestazione colonna nomi piante -->
                     <th scope="col">Piante e alberi</th>
+                    <!-- Intestazioni colonne mesi -->
                     @foreach (['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'] as $index => $mese)
                         <th scope="col" class="col-mese col-{{ $index + 1 }}">{{ $mese }}</th>
                     @endforeach
                 </tr>
             </thead>
             <tbody>
+                <!-- Loop attraverso tutte le piante -->
                 @foreach ($piante as $pianta)
                     <tr>
+                        <!-- Nome pianta -->
                         <td class="table text-center align-middle fw-bold">
                             {{ $pianta['nome'] }}
                         </td>
+                        <!-- Celle per ogni mese (1-12) -->
                         @foreach (range(1, 12) as $mese)
                             <td class="col-mese col-{{ $mese }} {{ in_array($mese, $pianta['potatura']) ? 'p-0' : '' }}">
+                                <!-- Mostra immagine solo se il mese è nel periodo di potatura -->
                                 @if (in_array($mese, $pianta['potatura']))
                                     <img src="{{ asset('images/piante/' . ($pianta['immagine'] ?? 'default.png')) }}" 
                                         alt="{{ $pianta['nome'] }}"
@@ -91,8 +113,11 @@
             </tbody>
         </table>
     </div>
+    
+    <!-- Script per la gestione dei filtri -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Riferimenti agli elementi del form
             const filterForm = document.getElementById('filter-form');
             const resetButton = document.getElementById('reset-filters');
             const monthSelect = document.querySelector('select[name="month"]');
@@ -106,8 +131,8 @@
 
             // Gestione del submit del form
             filterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                applyFilters();
+                e.preventDefault(); // Previeni il ricaricamento della pagina
+                applyFilters(); // Applica i filtri
             });
 
             // Gestione del reset
@@ -115,19 +140,21 @@
                 // Resetta il select
                 monthSelect.value = '';
                 
-                // Mostra tutto
+                // Mostra tutte le colonne e righe
                 showAllColumnsAndRows();
             });
 
+            // Funzione per applicare i filtri
             function applyFilters() {
                 const selectedMonth = monthSelect.value;
                 
+                // Se nessun mese è selezionato, mostra tutto
                 if (!selectedMonth) {
-                    // Se nessun mese è selezionato, mostra tutto
                     showAllColumnsAndRows();
                     return;
                 }
                 
+                // Converti il nome del mese in numero (1-12)
                 const monthNumber = monthMap[selectedMonth];
                 
                 // Nascondi tutte le colonne dei mesi
@@ -145,17 +172,18 @@
                     col.style.display = '';
                 });
 
-                // Mostra solo le righe che hanno immagini nel mese selezionato
+                // Filtra le righe: mostra solo quelle con immagini nel mese selezionato
                 document.querySelectorAll('tbody tr').forEach(riga => {
                     const cellaMese = riga.querySelector(`.col-${monthNumber}`);
                     if (cellaMese && cellaMese.querySelector('img')) {
-                        riga.style.display = '';
+                        riga.style.display = ''; // Mostra riga
                     } else {
-                        riga.style.display = 'none';
+                        riga.style.display = 'none'; // Nascondi riga
                     }
                 });
             }
 
+            // Funzione per mostrare tutte le colonne e righe
             function showAllColumnsAndRows() {
                 // Mostra tutte le colonne
                 document.querySelectorAll('.col-mese').forEach(col => {
