@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use App\Models\Flower;
 use Illuminate\Http\Request;
 
@@ -35,7 +35,18 @@ class FlowerController extends Controller
         if ($request->type) {
             $query->where('type', $request->type);
         }
-
+        if ($request->description) {
+            $query->where('description', $request->description);
+        }
+        if ($request->care_sun) {
+            $query->where('care_sun', $request->care_sun);
+        }
+        if ($request->care_water) {
+            $query->where('care_water', $request->care_water);
+        }
+        if ($request->care_soil) {
+            $query->where('care_soil', $request->care_soil);
+        }
         return $query->paginate(12);
     }
 

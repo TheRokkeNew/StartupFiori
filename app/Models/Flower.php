@@ -10,5 +10,5 @@ class Flower extends Model
     use HasFactory;
 
 
-    protected $fillable = ['name', 'image', 'color', 'season', 'type'];
+    protected $fillable = ['name', 'image', 'color', 'season', 'type', 'description', 'care_sun', 'care_water', 'care_soil'];
 }

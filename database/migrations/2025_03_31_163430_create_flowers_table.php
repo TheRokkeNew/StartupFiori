@@ -18,8 +18,16 @@ return new class extends Migration
             $table->string('color');
             $table->string('season');
             $table->string('type');
+            $table->text('description')->nullable(); 
+            $table->string('care_sun')->nullable();  
+            $table->string('care_water')->nullable();
+            $table->string('care_soil')->nullable();
             $table->timestamps();
         });
+    }
+    public function show(Flower $flower)
+    {
+        return view('flowers.show', compact('flower'));
     }
 
     /**

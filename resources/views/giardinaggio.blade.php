@@ -34,7 +34,7 @@
         <div class="text-center">
             <h6>Trova il giardiniere più vicino a me</h6>
             <div class="maps">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d362123.44626421743!2d11.020247289062509!3d44.840112200000036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477e4fe9e4c5c733%3A0xbda39b9e4206987!2sGiardineria!5e0!3m2!1sit!2sit!4v1744215924449!5m2!1sit!2sit" allowfullscreen loading="lazy"></iframe>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1OfA4N7ckbMLvlIz1qEvmvwIYkXuzIlc" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
 
