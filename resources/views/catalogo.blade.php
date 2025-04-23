@@ -3,7 +3,7 @@
 
 <style>
   body {
-    background-color: #F7CEAB;
+    background-color:rgb(250, 202, 210);
   }
 
   .text-center {
