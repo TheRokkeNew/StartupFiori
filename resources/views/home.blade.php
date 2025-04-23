@@ -58,8 +58,8 @@
         .hero {
             width: calc(var(--index) * 36);
             position: absolute;
-            left: 30vw;
-            top: 22vh;
+            left: 25vw;
+            top: -10vh;
             z-index: -1;
         }
         .main-header {

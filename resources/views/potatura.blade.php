@@ -8,7 +8,7 @@
     }
     /* Stile sfondo pagina */
     body {
-        background-color: #f5fffa;
+        background-color:rgb(252, 224, 199);
     }
     /* Stile tabella principale */
     table {
