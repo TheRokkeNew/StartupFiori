@@ -34,7 +34,7 @@
             will-change: transform;
         }
         body {
-            background-color: #F7CEAB;
+            background-color:#f7ceab;
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -181,12 +181,7 @@
     <div class="wrapper">
         <div class="content">
             <header class="hero-section">
-				<img data-speed=".6" class="hero" src="{{ URL('images/bouquet.png') }}" alt="Alt" >
-				<div class="container">
-					<div data-speed=".75" class="main-header">
-						<h2 class="main-title">FlowerFormula</h2>
-					</div>
-				</div>
+				<img data-speed=".6" class="hero" src="{{ URL('images/LOGO.png') }}" alt="Alt" >
 			</header>
             
             <div class="container">
