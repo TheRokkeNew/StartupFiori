@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\OccasionController;
 use App\Http\Controllers\FlowerController;
 use App\Http\Controllers\PotaturaController;
@@ -18,6 +19,8 @@ Route::post('/register',[UserController::class, 'register'])->name('registerUser
 
 Route::get('/login',[UserController::class,'showLoginForm'])->name('login');
 Route::post('/login',[UserController::class,'login'])->name('loginUser');
+Route::get("/createAdmin",[UserController::class,"createAdmin"])->name("createAdmin");
+Route::get("/handlePermissions",[UserController::class,"HandlePermissions"])->name("handlePermissions");
 
 Route::get('/userProfile',[UserController::class,'showUserProfile'])->name('showUserProfile');
 Route::post('/userProfile',[UserController::class,'updateUserProfile'])->name('updateUserProfile');
