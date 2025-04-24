@@ -51,7 +51,7 @@
 
 <div class="container my-4 body-bg">
     <a href="javascript:history.back()" class="btn btn-back">
-        <i class="fas fa-arrow-left"></i> Torna indietro
+        <i class="fas fa-arrow-left"></i> Torna al giardinaggio
     </a>
     <!-- Titolo principale -->
     <h2 class="mb-4 text-center">Calendario della Potatura</h2>
