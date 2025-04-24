@@ -14,16 +14,12 @@
         max-width: 70%; 
         height: auto; 
     }
-    .text-classic{
-        color: rgb(248, 112, 189);
-    }
 </style>
 <div class="container text-center">
-    <h1><u class="text-classic">Funerale</u></h1>
+    <h1>Funerale</h1>
     <p>Un tributo floreale per onorare chi non c’è più</p>
     <img src="{{ asset('images/occasione/funerale.jpg') }}" class="img-fluid" alt="Funerale">
-    <h3 class="mt-5 mb-2">I nostri fiori per il tuo bouquet ideale</h3>
-    <p></p>
+    <h3 class="mt-3 mb-3">I nostri fiori per il tuo bouquet ideale</h3>
     <div class="row">
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/crisantemo.jpg') }}" class="img-fluid rounded" alt="Crisantemo">

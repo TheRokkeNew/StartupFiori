@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OccasionController;
 use App\Http\Controllers\FlowerController;
 use App\Http\Controllers\PotaturaController;
+use App\Http\Controllers\GardenerController;
 
 
 Route::get('/', function () {

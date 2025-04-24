@@ -14,19 +14,12 @@
         max-width: 70%; 
         height: auto; 
     }
-    .bg-classic{
-        background-color:rgb(248, 112, 189);   
-    }
-    .text-classic{
-        color: rgb(248, 112, 189);
-    }
 </style>
-<div class="container text-center">
-    <h1 ><u class="text-classic">Matrimonio</u></h1>
+<div class="container text-center ">
+    <h1>Matrimonio</h1>
     <p>Celebra il giorno più bello con i fiori perfetti!</p>
     <img src="{{ asset('images/occasione/matrimonio.jpg') }}" class="img-fluid" alt="Matrimonio">
-    <h3 class="mt-5 mb-2">I nostri fiori per il tuo bouquet ideale</h3>
-    <p></p>
+    <h3 class="mt-3 mb-3">I nostri fiori per il tuo bouquet ideale</h3>
     <div class="row">
         <div class="col-md-4 text-center  ">
             <img src="{{ asset('images/occasione/fiori/peonia.jpg') }}" class="img-fluid rounded" alt="Peonia">

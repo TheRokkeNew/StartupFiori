@@ -14,15 +14,12 @@
         max-width: 70%; 
         height: auto; 
     }
-    .text-classic{
-        color: rgb(248, 112, 189);
-    }
 </style>
 <div class="container text-center">
-    <h1><u class="text-classic">San Valentino</u></h1>
+    <h1>San Valentino</h1>
     <p>Dichiara il tuo amore con i fiori più romantici!</p>
     <img src="{{ asset('images/occasione/san_valentino.jpg') }}" class="img-fluid" alt="San Valentino">
-    <h3 class="mt-5 mb-2">I nostri fiori per il tuo bouquet ideale</h3>
+    <h3 class="mt-3 mb-3">I nostri fiori per il tuo bouquet ideale</h3>
     <div class="row">        
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/tulipano_rosso.jpg') }}" class="img-fluid rounded" alt="Tulipano rosso">
