@@ -15,7 +15,7 @@ class FlowerController extends Controller
 
         return view('catalogo');
     }
-
+    
     public function show($id)
     {
         $flower = Flower::findOrFail($id); // Recupera il fiore dal database
