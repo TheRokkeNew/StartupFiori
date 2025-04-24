@@ -10,6 +10,17 @@
     body {
         background-color:rgb(200, 245, 222);
     }
+    /*bottone torna al giardinaggio*/ 
+    .btn-back {
+        background-color:rgb(105, 166, 119);
+        border-color: rgb(105, 166, 119);
+        color: white;
+    }
+
+    .btn-back:hover {
+        background-color: rgb(105, 166, 119);
+        border-color: rgb(105, 166, 119);
+    }
     /* Stile tabella principale */
     table {
         table-layout: auto !important;
@@ -39,6 +50,9 @@
 </style>
 
 <div class="container my-4 body-bg">
+    <a href="javascript:history.back()" class="btn btn-back">
+        <i class="fas fa-arrow-left"></i> Torna indietro
+    </a>
     <!-- Titolo principale -->
     <h2 class="mb-4 text-center">Calendario della Potatura</h2>
     
@@ -68,6 +82,7 @@
                 <option value="Set">Set</option>
                 <option value="Ott">Ott</option>
                 <option value="Nov">Nov</option>
+                <option value="Dic">Dic</option>
             </select>
             <!-- Pulsanti azione -->
             <button type="submit" class="btn btn-success w-100 mt-3">Filtra</button>
