@@ -57,6 +57,17 @@
     color: white;
   }
 
+  .btn-pink {
+    background-color: #ffb6c1;
+    border-color: #ffb6c1;
+    color: #6b003b;
+  }
+  .btn-pink:hover {
+    background-color: #ff69b4;
+    border-color: #ff69b4;
+    color: white;
+  }
+
   .card-title {
     color: #c71585;
   }
@@ -146,7 +157,11 @@
             <button type="reset" id="reset-filters" class="btn btn-secondary w-100 mt-2">Reset Filtri</button>
           </div>
         </form>
-      </div>
+      </div>  
+      <!-- AGGIUNGI FIORE -->
+      <div class="d-flex justify-content-end mb-3">
+        <a href={{ url('/flowers/create') }} class="btn btn-success me-2">➕ Aggiungi Fiore</a>
+      </div>      
     </div>
 
     <!-- COLONNA DESTRA: CATALOGO -->
@@ -168,7 +183,7 @@ $(document).ready(function() {
   // Funzione per caricare i fiori (con paginazione e filtri)
   function loadFlowers(page = 1, filters = {}) {
     $.ajax({
-      url: '/catalogo?page=' + page, // URL della route con pagina
+      url: '/flowers?page=' + page, // URL della route con pagina
       method: 'GET',
       data: filters, // Invia i filtri al controller
       success: function(response) {
@@ -188,6 +203,16 @@ $(document).ready(function() {
                   <p class="card-text">Colore: ${flower.color}</p>
                   <p class="card-text">Stagione: ${flower.season}</p>
                   <p class="card-text">Tipo: ${flower.type}</p>
+
+                  <div class="d-flex justify-content-between mt-3">
+                    <a href="/flowers/${flower.id}/edit" class="btn btn-sm btn-pink">✏️ Modifica</a>
+                    <form method="POST" action="/flowers/${flower.id}" onsubmit="return confirm('Sicuro di voler eliminare questo fiore?');">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <input type="hidden" name="_method" value="DELETE">
+                      <button type="submit" class="btn btn-sm btn-secondary">🗑️ Elimina</button>
+                    </form>
+                  </div>
+
                 </div>
               </div>
             </div>`;
@@ -207,14 +232,26 @@ $(document).ready(function() {
 
     // Se ci sono più pagine, mostra i pulsanti
     if (response.last_page > 1) {
+      let firstPage = response.current_page > 1 
+        ? `<button class="btn btn-outline-primary me-1" data-page="1"><<</button>` 
+        : '';
       let prevPage = response.current_page > 1 
-        ? `<button class="btn btn-outline-primary me-2" data-page="${response.current_page - 1}">⬅</button>` 
+        ? `<button class="btn btn-outline-primary me-1" data-page="${response.current_page - 1}">⬅</button>` 
         : '';
       let nextPage = response.current_page < response.last_page 
-        ? `<button class="btn btn-outline-primary ms-2" data-page="${response.current_page + 1}">➡</button>` 
+        ? `<button class="btn btn-outline-primary ms-1" data-page="${response.current_page + 1}">➡</button>` 
+        : '';
+      let lastPage = response.current_page < response.last_page 
+        ? `<button class="btn btn-outline-primary ms-1" data-page="${response.last_page}">>></button>` 
         : '';
 
-      pagination.html(prevPage + ` <span>Pagina ${response.current_page} di ${response.last_page}</span> ` + nextPage);
+      pagination.html(
+        firstPage + 
+        prevPage + 
+        `<span class="mx-2">Pagina ${response.current_page} di ${response.last_page}</span>` + 
+        nextPage + 
+        lastPage
+      );
     }
   }
 

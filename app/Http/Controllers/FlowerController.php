@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Flower;
@@ -7,13 +8,61 @@ use Illuminate\Http\Request;
 
 class FlowerController extends Controller
 {
+    public function create()
+    {
+        return view('flowers.create'); 
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'color' => 'required',
+            'season' => 'required',
+            'type' => 'required',
+            'image' => 'required|image|max:2048',
+        ]);
+
+        $data['image'] = $request->file('image')->store('flowers', 'public');
+        Flower::create($data);
+        return redirect('/flowers')->with('success', 'Fiore aggiunto!');
+    }
+
+    public function edit($id)
+    {
+        $flower = Flower::findOrFail($id);
+        return view('flowers.edit', compact('flower'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $flower = Flower::findOrFail($id);
+        $data = $request->validate([
+            'name' => 'required',
+            'color' => 'required',
+            'season' => 'required',
+            'type' => 'required',
+        ]);        
+
+        $flower->update($data);
+        return redirect('/catalogo')->with('success', 'Fiore aggiornato!');
+    }
+
+    public function destroy($id)
+    {
+        $flower = Flower::findOrFail($id);
+        Storage::delete('public/' . $flower->image);
+        $flower->delete();
+        return redirect('/catalogo')->with('success', 'Fiore eliminato!');
+    }
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
             return response()->json($this->filterFlowers($request));
         }
 
-        return view('catalogo');
+        return view('catalogo'); 
     }
     
     public function show($id)
@@ -24,7 +73,7 @@ class FlowerController extends Controller
 
     private function filterFlowers($request)
     {
-        $query = Flower::query();
+        $query = Flower::query()->orderBy('created_at', 'desc');
 
         if ($request->color) {
             $query->where('color', $request->color);
@@ -50,4 +99,5 @@ class FlowerController extends Controller
         return $query->paginate(12);
     }
 
+    
 }

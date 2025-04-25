@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OccasionController;
 use App\Http\Controllers\FlowerController;
 use App\Http\Controllers\PotaturaController;
-use App\Http\Controllers\GardenerController;
+
 
 
 Route::get('/', function () {
@@ -28,6 +28,23 @@ Route::post('/upload-image',[UserController::class,'uploadImage'])->name('upload
 
 //pagina per ogni occasione 
 Route::get('/occasione/{tipo}', [OccasionController::class, 'show']);
+
+
+//CRUD
+//mostra catalogo
+Route::get('/flowers', [FlowerController::class, 'index'])->name('flowers.index');
+//form creazione
+Route::get('/flowers/create', [FlowerController::class, 'create'])->name('flowers.create');
+//salva nuovo fiore
+Route::post('/flowers', [FlowerController::class, 'store'])->name('flowers.store');
+//mostra dettaglio
+Route::get('/flowers/{flower}', [FlowerController::class, 'show'])->name('flowers.show');
+//form modifica
+Route::get('/flowers/{flower}/edit', [FlowerController::class, 'edit'])->name('flowers.edit');
+//aggiorna fiore
+Route::put('/flowers/{flower}', [FlowerController::class, 'update'])->name('flowers.update');
+//elimina fiore 
+Route::delete('/flowers/{flower}', [FlowerController::class, 'destroy'])->name('flowers.destroy');
 
 //catalogo
 Route::get('/catalogo', [FlowerController::class, 'index'])->name('catalogo');

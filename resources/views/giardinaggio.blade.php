@@ -34,7 +34,7 @@
         <div class="text-center">
             <h6>Trova il giardiniere più vicino a me</h6>
             <div class="maps">
-                <iframe src="https://www.google.com/maps/d/embed?mid=17aoSG6JDkx5LOeJxcBUZGfI_CSa_ov0&ehbc=2E312F" width="640" height="480"></iframe>
+                
             </div>
         </div>
 
