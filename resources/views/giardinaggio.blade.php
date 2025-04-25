@@ -9,11 +9,6 @@
         width: 750px; 
         height: 450px;       
     }
-    .maps iframe {
-        width: 250px;
-        height: 150px;
-        border: 0;
-    }
     .img-small {
         width: 250px;
         height: 150px;
@@ -30,14 +25,6 @@
     <img src="{{ asset('images/giardino/giardinaggio.jpg') }}" class="img-fluid" alt="Giardinaggio">
 
     <div class="d-flex justify-content-center mt-4 flex-wrap" style="gap: 250px;">
-        <!--giardiniere più vicino-->
-        <div class="text-center">
-            <h6>Trova il giardiniere più vicino a me</h6>
-            <div class="maps">
-                
-            </div>
-        </div>
-
         <!--Calendario potatura-->
         <div class="text-center">
             <h6>Consigli per la potatura</h6>

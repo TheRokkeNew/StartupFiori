@@ -63,3 +63,4 @@ Route::get('/giardinaggio', function () {
 
 Route::get('/potatura', [PotaturaController::class, 'index'])->name('potatura');
 
+
