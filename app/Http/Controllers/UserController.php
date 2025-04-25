@@ -7,7 +7,10 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
@@ -21,6 +24,31 @@ class UserController extends Controller
             return redirect()->route('login')->with('error','Devi essere loggato per accedere a questa pagina');
         }
         return view('userProfile');
+    }
+
+    public function createAdmin()
+    {
+        $role = Role::create(["name" => "admin"]);
+        $permission = Permission::create(['name' => 'edit articles']);
+        $role->givePermissionTo($permission);
+        $permission->assignRole($role);
+        
+    }
+
+    public function HandlePermissions(){
+        $user = User::where("name", "Test User")->first();
+        $user->assignRole('admin');
+        $role = Role::where("name","admin")->first();
+        if($role and $user){
+            DB::table('role_user')->insert([
+                "user_id" => $user->id,
+                "role_id" => $role->id,
+                "user_name" => $user->name,
+                "role_name" => $role->name
+            ]);
+        }
+
+        return redirect()->route("home");
     }
 
     public function updateUserProfile(Request $request){
@@ -49,6 +77,8 @@ class UserController extends Controller
         return redirect()->route('showUserProfile')->with('success','Profilo aggiornato con successo');
     }
 
+
+
     public function register(Request $request){
         $validateData = $request->validate([
             'name' => 'required|string|max:255',
@@ -62,6 +92,7 @@ class UserController extends Controller
             'password' => Hash::make($validateData['password']),
         ]);
 
+        
         Auth::login($user);
 
         return redirect()->route('home')->with('success', 'Registrazione avvenuta con successo! Sei stato loggato automaticamente');
