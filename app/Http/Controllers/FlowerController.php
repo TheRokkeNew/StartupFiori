@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Flower;
@@ -12,7 +11,7 @@ class FlowerController extends Controller
     {
         return view('flowers.create'); 
     }
-
+    
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -23,7 +22,13 @@ class FlowerController extends Controller
             'image' => 'required|image|max:2048',
         ]);
 
-        $data['image'] = $request->file('image')->store('flowers', 'public');
+        $image = $request->file('image');
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $image->move(public_path('images/catalogo'), $imageName);
+
+        // Salva il percorso corretto per visualizzare l'immagine
+        $data['image'] = 'images/catalogo/' . $imageName;
+
         Flower::create($data);
         return redirect('/flowers')->with('success', 'Fiore aggiunto!');
     }

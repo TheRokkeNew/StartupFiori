@@ -135,7 +135,7 @@ class UserController extends Controller
         ]);
         
         if ($validator->fails()) {
-            dd($validator->errors()->all());
+            dd($validator->errors()->toArray());
         }
         
 

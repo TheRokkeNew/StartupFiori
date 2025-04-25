@@ -196,7 +196,7 @@ $(document).ready(function() {
             <div class="col">
               <div class="card h-100">
                 <a href="/flowers/${flower.id}"> 
-                  <img src="/${flower.image}" class="card-img-top" alt="${flower.name}" style="height: 200px; object-fit: cover;">
+                  <img src="${flower.image}" class="card-img-top" alt="${flower.name}" style="height: 200px; object-fit: cover;">
                 </a>
                 <div class="card-body">
                   <h5 class="card-title">${flower.name}</h5>

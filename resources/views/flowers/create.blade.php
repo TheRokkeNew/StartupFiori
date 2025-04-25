@@ -60,10 +60,51 @@
     </div>
 
     <div class="mb-3">
-      <label for="image" class="form-label">Immagine</label>
+      <label for="description" class="form-label">Descrizione</label>
+      <textarea name="description" class="form-control" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cura del fiore</label>
+      <div class="row">
+        <div class="col-md-4">
+          <label for="sun" class="form-label">Sole</label>
+          <select name="sun" class="form-select">
+            <option value="Pieno sole">Pieno sole</option>
+            <option value="Mezz'ombra">Mezz'ombra</option>
+            <option value="Ombra">Ombra</option>
+            <option value="Variabile">Variabile</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="water" class="form-label">Acqua</label>
+          <select name="water" class="form-select">
+            <option value="Alta">Alta</option>
+            <option value="Media">Media</option>
+            <option value="Bassa">Bassa</option>
+            <option value="Minima">Minima</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="soil" class="form-label">Terreno</label>
+          <select name="soil" class="form-select">
+            <option value="Normale">Normale</option>
+            <option value="Sabbioso">Sabbioso</option>
+            <option value="Argilloso">Argilloso</option>
+            <option value="Acido">Acido</option>
+            <option value="Alcalino">Alcalino</option>
+            <option value="Drenante">Drenante</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="image" class="form-label">Immagine [Max 2MB]</label>
       <input type="file" name="image" class="form-control" accept="image/*" required>
     </div>
 
+    
     <button type="submit" class="btn btn-success">💾 Salva Fiore</button>
     <a href="{{ route('flowers.index') }}" class="btn btn-secondary ms-2">↩️ Indietro</a>
   </form> 

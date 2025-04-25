@@ -38,6 +38,8 @@ Route::get('/occasione/{tipo}', [OccasionController::class, 'show']);
 Route::get('/flowers', [FlowerController::class, 'index'])->name('flowers.index');
 //form creazione
 Route::get('/flowers/create', [FlowerController::class, 'create'])->name('flowers.create');
+//Salva immagine fiore
+Route::post('/upload-flower-image',[FlowerController::class,'uploadFlowerImage'])->name('flowers.image');
 //salva nuovo fiore
 Route::post('/flowers', [FlowerController::class, 'store'])->name('flowers.store');
 //mostra dettaglio
