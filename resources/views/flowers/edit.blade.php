@@ -9,15 +9,18 @@
 <div class="container mt-5">
   <h2 class="text-center mb-4">✏️ Modifica Fiore: {{ $flower->name }}</h2>
 
+  <!--form per modificare un fiore con metodo PUT-->
   <form action="{{ route('flowers.update', $flower->id) }}" method="POST" enctype="multipart/form-data" class="bg-white p-4 rounded shadow">
-    @csrf
-    @method('PUT')
+    @csrf <!-- Token CSRF per la protezione del form -->
+    @method('PUT') <!-- Sovrascrive il metodo HTTP come PUT -->
 
+    <!--nome fiore-->
     <div class="mb-3">
       <label for="name" class="form-label">Nome Fiore</label>
       <input type="text" name="name" class="form-control" value="{{ $flower->name }}" required>
     </div>
 
+    <!--colore-->
     <div class="mb-3">
       <label for="color" class="form-label">Colore</label>
       <select name="color" class="form-select" required>
@@ -32,6 +35,7 @@
       </select>
     </div>
 
+    <!--stagione-->
     <div class="mb-3">
       <label for="season" class="form-label">Stagione</label>
       <select name="season" class="form-select" required>
@@ -46,6 +50,7 @@
       </select>
     </div>
 
+    <!--tipo-->
     <div class="mb-3">
       <label for="type" class="form-label">Tipo</label>
       <select name="type" class="form-select" required>
@@ -59,6 +64,8 @@
         <option value="Rampicante" {{ $flower->type == 'Rampicante' ? 'selected' : '' }}>Rampicante</option>
       </select>
     </div>
+
+    <!-- Pulsanti aggiorna fiore e indietro -->
     <button type="submit" class="btn btn-success">💾 Aggiorna Fiore</button>
     <a href="{{ route('flowers.index') }}" class="btn btn-secondary ms-2">↩️ Indietro</a>
   </form>

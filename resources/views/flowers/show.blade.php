@@ -59,9 +59,8 @@
 
 <div class="container mt-5 flower-wrapper">
     <div class="flower-details">
-        <!-- Immagine in alto a destra -->
+        <!-- Immagine fiore -->
         <img src="{{ asset($flower->image) }}" alt="{{ $flower->name }}" class="flower-image">
-
         <h1 class="display-4">{{ $flower->name }}</h1>
 
         <!--Colore Stagione Tipo -->
@@ -90,6 +89,7 @@
     </div>
 </div>
 
+<!--script per gestire pulsante torna al catalogo-->
 <script type="text/javascript">
     document.getElementById('backToCatalogButton').onclick = function() {
         window.history.back();  // Torna alla pagina precedente (catalogo)

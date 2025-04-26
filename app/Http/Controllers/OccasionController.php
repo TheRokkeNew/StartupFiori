@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 
 class OccasionController extends Controller
 {    
+    //Mostra la vista corrispondente a un'occasione specifica
     public function show($tipo)
     {
+        // Lista delle occasioni
         $occasioni = ['matrimonio', 'funerale', 'battesimo', 'san_valentino'];
 
+        // Verifica se l'occasione richiesta esiste
         if (!in_array($tipo, $occasioni)) {
             abort(404); // Se l'occasione non esiste, mostra una pagina 404
         }
