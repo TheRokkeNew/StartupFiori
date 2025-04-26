@@ -56,11 +56,7 @@ Route::get('/catalogo', [FlowerController::class, 'index'])->name('catalogo');
 //fiore nel catalogo
 Route::get('/flowers/{id}', [FlowerController::class, 'show'])->name('flowers.show');
 
-//calendario potatura e innesti 
-Route::get('/giardinaggio', function () {
-    return view('giardinaggio'); 
-}) ->name('giardinaggio');
-
+//calendario potatura 
 Route::get('/potatura', [PotaturaController::class, 'index'])->name('potatura');
 
 

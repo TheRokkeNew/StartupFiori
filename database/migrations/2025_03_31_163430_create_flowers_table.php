@@ -8,6 +8,8 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * Metodo up: viene eseguito quando la migrazione viene applicata
+     * Crea la tabella 'flowers' nel database
      */
     public function up(): void
     {
@@ -24,17 +26,15 @@ return new class extends Migration
             $table->string('care_soil')->nullable();
             $table->timestamps();
         });
-    }
-    public function show(Flower $flower)
-    {
-        return view('flowers.show', compact('flower'));
-    }
+    }   
 
     /**
      * Reverse the migrations.
+     * Metodo down: viene eseguito quando la migrazione viene rollbackata
+     * Elimina la tabella 'flowers' dal database
      */
     public function down(): void
     {
-        Schema::dropIfExists('flowers');
+        Schema::dropIfExists('flowers'); // Eliminazione della tabella
     }
 };

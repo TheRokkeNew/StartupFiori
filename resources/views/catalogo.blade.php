@@ -95,13 +95,13 @@
 <div class="container mt-4">
   <h1 class="text-center">🌸 Catalogo Fiori 🌼</h1>
   <div class="row">    
-    <!-- COLONNA LATERALE: FILTRI -->
+    <!--Filtri-->
     <div class="col-md-3">
       <div class="filters-box">
         <h5>🔍 Filtra per:</h5>
-        <!-- FORM DI FILTRAGGIO -->
+        <!--Form di filtreggio-->
         <form id="filter-form" class="row g-3">          
-          <!-- FILTRO COLORE -->
+          <!--Colore-->
           <div class="col-12">
             <label class="fw-bold">Colore:</label>
             <select name="color" class="form-select">
@@ -116,7 +116,7 @@
               <option value="Azzurro">Azzurro</option>              
             </select>
           </div>
-          <!-- FILTRO STAGIONE -->
+          <!--Stagione-->
           <div class="col-12">
             <label class="fw-bold">Stagione:</label>
             <select name="season" class="form-select">
@@ -131,7 +131,7 @@
               <option value="Annuale">Annuale</option>
             </select>
           </div>
-          <!-- FILTRO TIPO -->
+          <!--Tipo-->
           <div class="col-12">
             <label class="fw-bold">Tipo:</label>
             <select name="type" class="form-select">
@@ -147,24 +147,24 @@
             </select>
           </div>
 
-          <!-- PULSANTE APPLICA FILTRI -->
+          <!--Pulsante applica filtri-->
           <div class="col-12">
             <button type="submit" class="btn btn-success w-100 mt-3">Filtra</button>
           </div>
 
-          <!-- PULSANTE RESET FILTRI -->
+          <!--Pulsante reset filtri-->
           <div class="col-12">
             <button type="reset" id="reset-filters" class="btn btn-secondary w-100 mt-2">Reset Filtri</button>
           </div>
         </form>
       </div>  
-      <!-- AGGIUNGI FIORE -->
+      <!--Aggiungi fiore-->
       <div class="d-flex justify-content-end mb-3">
         <a href={{ url('/flowers/create') }} class="btn btn-success me-2">➕ Aggiungi Fiore</a>
       </div>      
     </div>
 
-    <!-- COLONNA DESTRA: CATALOGO -->
+    <!--Catalogo-->
     <div class="col-md-9">
       <!-- Contenitore per le card dei fiori -->
       <div id="flower-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
@@ -175,22 +175,25 @@
   </div>
 </div>
 
-<!-- SCRIPT JAVASCRIPT PER IL CARICAMENTO AJAX -->
+<!--Script JS per caricamento Ajax-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
 
-  // Funzione per caricare i fiori (con paginazione e filtri)
+  //Funzione per caricare i fiori (con paginazione e filtri)
   function loadFlowers(page = 1, filters = {}) {
     $.ajax({
-      url: '/flowers?page=' + page, // URL della route con pagina
+      //URL della route con pagina
+      url: '/flowers?page=' + page, 
       method: 'GET',
-      data: filters, // Invia i filtri al controller
+      //Invia i filtri al controller
+      data: filters, 
       success: function(response) {
         let flowerList = $('#flower-list');
-        flowerList.empty(); // Svuota prima di caricare nuovi fiori
+        //Svuota prima di caricare nuovi fiori
+        flowerList.empty(); 
 
-        // Crea una card per ogni fiore
+        //Crea una card per ogni fiore
         response.data.forEach(flower => {
           let card = `
             <div class="col">
@@ -212,25 +215,25 @@ $(document).ready(function() {
                       <button type="submit" class="btn btn-sm btn-secondary">🗑️ Elimina</button>
                     </form>
                   </div>
-
                 </div>
               </div>
             </div>`;
-          flowerList.append(card); // Aggiunge la card alla lista
+          //Aggiunge la card alla lista
+          flowerList.append(card); 
         });
-
-        updatePagination(response); // Aggiorna i pulsanti di paginazione
-        window.scrollTo(0, 0); // Torna in cima alla pagina
+        //Aggiorna i pulsanti di paginazione
+        updatePagination(response); 
+        //Torna in cima alla pagina
+        window.scrollTo(0, 0); 
       }
     });
   }
 
-  // Funzione per gestire la paginazione dinamica
+  //Funzione per gestire la paginazione dinamica
   function updatePagination(response) {
     let pagination = $('#pagination');
     pagination.empty();
-
-    // Se ci sono più pagine, mostra i pulsanti
+    //Se ci sono più pagine, mostra i pulsanti
     if (response.last_page > 1) {
       let firstPage = response.current_page > 1 
         ? `<button class="btn btn-outline-primary me-1" data-page="1"><<</button>` 
@@ -255,27 +258,33 @@ $(document).ready(function() {
     }
   }
 
-  // Quando clicchi su una freccia di paginazione
+  //Quando clicchi su una freccia di paginazione
   $(document).on('click', '#pagination button', function() {
-    let page = $(this).data('page'); // Prende la pagina da caricare
-    let filters = $('#filter-form').serialize(); // Prende i filtri attivi
-    loadFlowers(page, filters); // Carica i fiori della nuova pagina
+    //Prende la pagina da caricare
+    let page = $(this).data('page'); 
+    //Prende i filtri attivi
+    let filters = $('#filter-form').serialize(); 
+    //Carica i fiori della nuova pagina
+    loadFlowers(page, filters); 
   });
 
-  // Quando invii il form dei filtri
+  //Quando invii il form dei filtri
   $('#filter-form').submit(function(event) {
-    event.preventDefault(); // Evita il refresh
-    let filters = $(this).serialize(); // Ottiene tutti i filtri scelti
-    loadFlowers(1, filters); // Carica i risultati con i filtri
+    //Evita il refresh
+    event.preventDefault(); 
+    //Ottiene tutti i filtri scelti
+    let filters = $(this).serialize();
+    //Carica i risultati con i filtri
+    loadFlowers(1, filters); 
   });
 
-  // Quando clicchi su "Reset Filtri"
+  //Quando clicchi su "Reset Filtri"
   $('#reset-filters').click(function() {
-    $('#filter-form')[0].reset(); // Reset dei filtri
-    loadFlowers(); // Ricarica tutti i fiori
+    $('#filter-form')[0].reset(); //Reset dei filtri
+    loadFlowers(); //Ricarica tutti i fiori
   });
 
-  // Al primo caricamento, mostra tutti i fiori
+  //Al primo caricamento, mostra tutti i fiori
   loadFlowers();
 });
 </script>

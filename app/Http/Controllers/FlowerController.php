@@ -78,6 +78,7 @@ class FlowerController extends Controller
         return view('catalogo'); 
     }
     
+    
     //Mostra i dettagli di un singolo fiore
     public function show($id)
     {

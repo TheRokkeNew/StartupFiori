@@ -144,7 +144,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/funerale') }}">Funerale</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/battesimo') }}">Battesimo</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/san_valentino') }}">San Valentino</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/giardinaggio ') }}">Giardinaggio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/potatura ') }}">Calendario potatura</a></li>
 
                     @auth
                     <li class="nav-item">
@@ -206,7 +206,7 @@
                             <p class="text-block__p">Un gesto romantico per San Valentino: fiori che riscaldano il cuore</p>
                         </div>
 
-                        <a href="{{ url('/giardinaggio ') }}">
+                        <a href="{{ url('/potatura ') }}">
                             <img class="gallery__item" src="{{ URL('images/work/giardinaggio.jpg') }}" alt="Alt">
                         </a>
                     </div>
