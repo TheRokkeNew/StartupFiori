@@ -159,9 +159,11 @@
         </form>
       </div>  
       <!--Aggiungi fiore-->
-      <div class="d-flex justify-content-end mb-3">
-        <a href={{ url('/flowers/create') }} class="btn btn-success me-2">➕ Aggiungi Fiore</a>
-      </div>      
+		@role('admin')
+			<div class="d-flex justify-content-end mb-3">
+				<a href="{{ url('/flowers/create') }}" class="btn btn-success me-2">➕ Aggiungi Fiore</a>
+			</div>
+		@endrole     
     </div>
 
     <!--Catalogo-->
@@ -207,6 +209,7 @@ $(document).ready(function() {
                   <p class="card-text">Stagione: ${flower.season}</p>
                   <p class="card-text">Tipo: ${flower.type}</p>
 
+				  @role('admin')
                   <div class="d-flex justify-content-between mt-3">
                     <a href="/flowers/${flower.id}/edit" class="btn btn-sm btn-pink">✏️ Modifica</a>
                     <form method="POST" action="/flowers/${flower.id}" onsubmit="return confirm('Sicuro di voler eliminare questo fiore?');">
@@ -215,6 +218,7 @@ $(document).ready(function() {
                       <button type="submit" class="btn btn-sm btn-secondary">🗑️ Elimina</button>
                     </form>
                   </div>
+				  		@endrole     
                 </div>
               </div>
             </div>`;
