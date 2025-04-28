@@ -45,7 +45,7 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgb(249, 249, 249);
             padding: 10px 20px;
         }
         .wrapper {
@@ -133,7 +133,9 @@
     <!-- Navbar fissa -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">FlowerFormula</a>
+            <a class="navbar-brand" href="#">
+                <img src="{{ asset('images/immagine.jpg') }}" alt="FlowerFormula Logo" style="height: 50px;">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
