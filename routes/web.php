@@ -58,5 +58,9 @@ Route::get('/flowers/{id}', [FlowerController::class, 'show'])->name('flowers.sh
 
 //calendario potatura 
 Route::get('/potatura', [PotaturaController::class, 'index'])->name('potatura');
+//consigli potatura
+Route::view('/consigli', 'consigli')->name('consigli');
+
+
 
 

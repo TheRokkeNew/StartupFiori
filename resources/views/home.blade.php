@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fioreria</title>
+    <title>FlowerFormula</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -206,7 +206,7 @@
                             <p class="text-block__p">Un gesto romantico per San Valentino: fiori che riscaldano il cuore</p>
                         </div>
 
-                        <a href="{{ url('/potatura ') }}">
+                        <a href="{{ url('/consigli ') }}">
                             <img class="gallery__item" src="{{ URL('images/work/giardinaggio.jpg') }}" alt="Alt">
                         </a>
                     </div>
@@ -244,11 +244,6 @@
     <!-- Footer fisso -->
     <footer class="footer">
         <p>&copy; 2025 FlowerFormula - Tutti i diritti riservati</p>
-        <div class="social-icons">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-twitter"></i></a>
-        </div>
     </footer>
 </body>
 </html>
