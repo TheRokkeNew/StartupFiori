@@ -12,6 +12,10 @@ use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
 
+/*
+    Spatie per la gestione dei ruoli
+*/
+
 class UserController extends Controller
 {
     public function showRegistrationForm(){
@@ -28,15 +32,35 @@ class UserController extends Controller
 
     public function createAdmin()
     {
-        $role = Role::create(["name" => "admin"]);
-        $permission = Permission::create(['name' => 'edit articles']);
+        $role = Role::where('name', 'admin')->first();
+
+        if (!$role) {
+            $role = Role::create(["name" => "admin"]);
+            
+        }
+
+        $role = Role::where('name','supervisor')->first();
+
+        if(!$role){
+            $role = Role::create(["name" => "supervisor"]);
+        }
+        
+        $permission = Permission::firstOrCreate(['name' => 'edit articles']);
+        
         $role->givePermissionTo($permission);
         $permission->assignRole($role);
         
     }
 
+    /*
+        Profilo admin
+        Name -> admin
+        Email -> admin@gmail.com
+        Password -> adminadmin
+    */
+
     public function HandlePermissions(){
-        $user = User::where("name", "Test User")->first();
+        $user = User::where("name", "admin")->first();
         $user->assignRole('admin');
         $role = Role::where("name","admin")->first();
         if($role and $user){
@@ -49,6 +73,10 @@ class UserController extends Controller
         }
 
         return redirect()->route("home");
+    }
+
+    public function GetPanel(){
+        return view("adminPanel");
     }
 
     public function updateUserProfile(Request $request){

@@ -63,14 +63,12 @@
               <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
             </div>
 
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <form action="{{route('upload.image') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <label for="profile_image">Carica la tua immagine:</label>
-                <input type="file" name="profile_image" id="profile_image">
-                <div class="d-grid"><button type="submit" class="btn bg-classic">Registrati e carica Immagine</button></div>
+                <div class="d-grid"><button type="submit" class="btn bg-classic">Registrati</button></div>
               </form>
-            </div> -->
+            </div>
 
 
           </form>
