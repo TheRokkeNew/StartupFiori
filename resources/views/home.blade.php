@@ -146,6 +146,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/funerale') }}">Funerale</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/battesimo') }}">Battesimo</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/san_valentino') }}">San Valentino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/festa_della_donna') }}">Festa della donna</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/potatura ') }}">Calendario potatura</a></li>
 
                     @auth
@@ -234,7 +235,7 @@
 
                         <div class="text-block gallery__item">
                             <h2 class="text-block__h">CURA DEL VERDE: TUTTO QUELLO CHE TI SERVE</h2>
-                            <p class="text-block__p">La potatura giusta al momento giusto fa la differenza: ecco i nostri consigli!</p>
+                            <p class="text-block__p">Ti aiutiamo a creare e mantenere uno spazio verde rigoglioso e accogliente: ecco i nostri consigli!</p>
                         </div>
                     
                     </div>

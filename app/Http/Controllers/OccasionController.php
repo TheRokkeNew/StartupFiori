@@ -10,7 +10,7 @@ class OccasionController extends Controller
     public function show($tipo)
     {
         // Lista delle occasioni
-        $occasioni = ['matrimonio', 'funerale', 'battesimo', 'san_valentino'];
+        $occasioni = ['matrimonio', 'funerale', 'battesimo', 'san_valentino', 'festa_della_donna'];
 
         // Verifica se l'occasione richiesta esiste
         if (!in_array($tipo, $occasioni)) {

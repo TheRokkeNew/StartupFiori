@@ -47,6 +47,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/funerale') }}">Funerale</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/battesimo') }}">Battesimo</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/san_valentino') }}">San Valentino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/occasione/festa_della_donna') }}">Festa della donna</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url('/potatura') }}">Calendario potatura</a></li>
                     <!-- Blocco per utenti autenticati -->
                     @auth

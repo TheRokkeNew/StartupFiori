@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-<style>    
-    /*importa dei font (Great Vibes,Lora) di Google Fonts per utilizzarli nella tua pagina web */
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Lora:ital@0;1&display=swap');
+<style>
+     /*importa dei font (Great Vibes,Lora) di Google Fonts per utilizzarli nella tua pagina web */
+     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Lora:ital@0;1&display=swap');
     body {
         background-color: #F7CEAB; 
         margin: 10;
@@ -13,13 +13,13 @@
     }
     @font-face {
         font-family: 'Brittany Signature';
-        src: url('{{ asset('fonts/Matrimonio.ttf') }}') format('truetype');
+        src: url('{{ asset('fonts/FestadellaDonna.ttf') }}') format('truetype');
     }
     h1 {
         font-family: 'Great Vibes', cursive;
         font-size: 3.5rem;
         color: #6C4C3F;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
     }
     h3 {
         font-family: 'Cormorant Garamond', serif;
@@ -40,9 +40,10 @@
         line-height: 1.6;
         font-style: italic;
         color:color: #6C4C3F;
+        margin-top: 0;
     }
     .container {
-        max-width: 800px;
+        max-width: 800px; 
     }
     .img-fluid {
         max-width: 70%; 
@@ -51,8 +52,8 @@
         opacity: 0;
         transition: opacity 0.3s ease;
     }
-    /*effetti*/
-    .img-fluid.loaded {
+     /*effetti*/
+     .img-fluid.loaded {
         opacity: 1;
     }
     h1, h3, h5, p {
@@ -67,31 +68,31 @@
     }
 </style>
 <!--Contenitore principale-->
-<div class="container text-center ">
+<div class="container text-center">
     <!-- Titolo della pagina -->
-    <h1>Matrimonio</h1>
+    <h1>Festa della donna</h1>
     <!-- Sottotitolo descrittivo -->
-    <p>Celebra il giorno più bello con i fiori perfetti!</p>
-    <img src="{{ asset('images/occasione/matrimonio.jpg') }}" class="img-fluid" alt="Matrimonio">
+    <p>La mimosa rappresenta <strong>forza, sensibilità e resilienza</strong></p>
+    <img src="{{ asset('images/occasione/8marzo.jpg') }}" class="img-fluid" alt="8Marzo">
     <!-- Titolo della sezione fiori -->
-    <h3 class="mt-3 mb-3">I nostri fiori per il tuo bouquet ideale</h3>
+    <h3 class="mt-3 mb-3">Le nostre composizioni di mimose</h3>
     <!-- Griglia Bootstrap a 3 colonne -->
     <div class="row">
-        <!--Peonia-->
-        <div class="col-md-4 text-center  ">
-            <img src="{{ asset('images/occasione/fiori/peonia.jpg') }}" class="img-fluid rounded" alt="Peonia">
-            <h5>Peonia</h5>
+        <!--Mimosa Classica-->
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/occasione/fiori/mimosa.jpg') }}" class="img-fluid rounded" alt="Mimosa Classica">
+            <h5>Mimosa Classica</h5>
         </div>
-        <!--Calla-->
-        <div class="col-md-4 text-center  ">
-            <img src="{{ asset('images/occasione/fiori/calla.jpg') }}" class="img-fluid rounded" alt="Calla">
-            <h5>Calla</h5>
+        <!--Mimosa Deluxe-->
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/occasione/fiori/mimosaDeluxe.jpg') }}" class="img-fluid rounded" alt="Mimosa Deluxe">
+            <h5>Mimosa Deluxe</h5>
         </div>
-        <!--Queen of Sweden-->
-        <div class="col-md-4 text-center  ">
-            <img src="{{ asset('images/occasione/fiori/queen_sweden.jpg') }}" class="img-fluid rounded" alt="Queen of Sweden ">
-            <h5>Queen of Sweden </h5>
-        </div>        
+        <!--Mimosa Elegante-->
+        <div class="col-md-4 text-center">
+            <img src="{{ asset('images/occasione/fiori/mimosaElegante.jpg') }}" class="img-fluid rounded" alt="Mimosa Elegante">
+            <h5>Mimosa Elegante</h5>         
+        </div>
     </div>
 </div>
 <script>
