@@ -19,9 +19,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
-        //FlowerSeeder
+        
         $this->call([
-            FlowerSeeder::class
+            //FlowerSeeder
+            FlowerSeeder::class,
+            //EmailSeeder
+            EventsTableSeeder::class
         ]);
        
     }

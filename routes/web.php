@@ -80,6 +80,3 @@ Route::get('/potatura', [PotaturaController::class, 'index'])->name('potatura');
 //consigli potatura
 Route::view('/consigli', 'consigli')->name('consigli');
 
-
-
-
