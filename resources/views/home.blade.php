@@ -29,7 +29,7 @@
             --color-text: #000000;
             --gallery-gap: calc(var(--index) * 7.5)
         }
-        /* will-change */
+        
         .content, .hero, .main-header, .gallery > * {
             will-change: transform;
         }
