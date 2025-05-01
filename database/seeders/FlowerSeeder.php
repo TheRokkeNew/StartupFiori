@@ -604,7 +604,7 @@ class FlowerSeeder extends Seeder
             [
                 'name' => 'Crisantemo', 
                 'image' => 'images/catalogo/crisantemo_bianco.jpg', 
-                'color' => 'Bianco puro', 
+                'color' => 'Bianco', 
                 'season' => 'Autunno', 
                 'type' => 'Perenne',
                 'description' => 'Simbolo di verità e purezza nell\'arte floreale orientale. Capolini pieni e longevi',
@@ -787,7 +787,7 @@ class FlowerSeeder extends Seeder
             [
                 'name' => 'Ranuncolo', 
                 'image' => 'images/catalogo/ranuncolo.jpg',
-                'color' => 'Mixdicolori',
+                'color' => 'Misti',
                 'season' => 'Primavera-Estate',
                 'type' => 'Bulbosa',
                 'description' => 'Esplosione di colori pastello con petali a stratificazione serrata. Ogni fiore sembra dipinto a mano.',
@@ -893,7 +893,7 @@ class FlowerSeeder extends Seeder
             [
                 'name' => 'Garofano', 
                 'image' => 'images/catalogo/garofano.jpg', 
-                'color' => 'Mixdicolori', 
+                'color' => 'Misti', 
                 'season' => 'Primavera-Estate', 
                 'type' => 'Perenne',
                 'description' => 'Fiori frastagliati dai colori vivaci, simbolo di fascino e distinzione. Profumo speziato',
@@ -905,7 +905,7 @@ class FlowerSeeder extends Seeder
             [
                 'name' => 'Gerbera', 
                 'image' => 'images/catalogo/gerbera.jpg', 
-                'color' => 'Mixdicolori', 
+                'color' => 'Misti', 
                 'season' => 'Primavera-Autunno', 
                 'type' => 'Perenne',
                 'description' => 'Grandi margherite dai colori brillanti, portatrici di gioia e solarità. Lunga durata',

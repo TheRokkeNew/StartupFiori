@@ -79,22 +79,25 @@
     <div class="row">
         <!--Crisantemo-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/crisantemo.jpg') }}" class="img-fluid rounded" alt="Crisantemo">
-            <h5>Crisantemo</h5>     
+            <a href="{{ route('flowers.show', ['id' => 52]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/crisantemo.jpg') }}" class="img-fluid rounded" alt="Crisantemo"></a>
+            <h5>Crisantemo</h5>
 	        <!--Descrizione floreale-->
             <p>Dolore e ricordo per una persona cara</p>       
         </div>
         <!--Garofano-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/garofano.jpg') }}" class="img-fluid rounded" alt="Garofano">
-            <h5>Garofano</h5>   
+            <a href="{{ route('flowers.show', ['id' => 77]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/garofano.jpg') }}" class="img-fluid rounded" alt="Garofano"></a>
+            <h5>Garofano</h5>
 	        <!--Descrizione floreale-->
             <p>Purezza e rispetto nel momento del lutto</p>         
         </div>
         <!--Giglio bianco-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/giglio_bianco.jpg') }}" class="img-fluid rounded" alt="Giglio bianco">
-            <h5>Giglio bianco</h5>     
+            <a href="{{ route('flowers.show', ['id' => 14]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/giglio_bianco.jpg') }}" class="img-fluid rounded" alt="Giglio bianco"></a>
+            <h5>Giglio bianco</h5>
 	        <!--Descrizione floreale-->
             <p>Purezza e luce per chi riposa</p>      
         </div>       

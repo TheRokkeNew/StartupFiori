@@ -78,22 +78,25 @@
     <div class="row">
         <!--Mimosa Classica-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/mimosa.jpg') }}" class="img-fluid rounded" alt="Mimosa Classica">
+            <a href="{{ route('flowers.show', ['id' => 79]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/mimosa.jpg') }}" class="img-fluid rounded" alt="Mimosa Classica"></a>
             <h5>Mimosa Classica</h5>
             <!--descrizione floreale-->
             <p>Il fascino senza tempo di un gesto tradizionale</p>
         </div>
         <!--Mimosa Deluxe-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/mimosaDeluxe.jpg') }}" class="img-fluid rounded" alt="Mimosa Deluxe">
+            <a href="{{ route('flowers.show', ['id' => 80]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/mimosaDeluxe.jpg') }}" class="img-fluid rounded" alt="Mimosa Deluxe"></a>
             <h5>Mimosa Deluxe</h5>
             <!--descrizione floreale-->
             <p>Lusso naturale per chi merita solo il meglio</p>
         </div>
         <!--Mimosa Elegante-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/mimosaElegante.jpg') }}" class="img-fluid rounded" alt="Mimosa Elegante">
-            <h5>Mimosa Elegante</h5> 
+            <a href="{{ route('flowers.show', ['id' => 81]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/mimosaElegante.jpg') }}" class="img-fluid rounded" alt="Mimosa Elegante"></a>
+            <h5>Mimosa Elegante</h5>
             <!--descrizione floreale-->
             <p>Grazia che incanta con leggerezza e stile</p>        
         </div>

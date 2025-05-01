@@ -93,6 +93,9 @@ class FlowerController extends Controller
         $query = Flower::query()->orderBy('created_at', 'desc');
 
         // Applica i filtri se presenti nella richiesta
+        if ($request->filled('name')) {
+            $query->where('name', 'like', '%' . $request->name . '%');
+        }
         if ($request->color) {
             $query->where('color', $request->color);
         }

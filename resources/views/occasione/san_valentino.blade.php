@@ -77,21 +77,24 @@
     <!-- Griglia Bootstrap a 3 colonne -->
     <div class="row">        
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/tulipano_rosso.jpg') }}" class="img-fluid rounded" alt="Tulipano rosso">
-            <h5>Tulipano rosso</h5>   
+            <a href="{{ route('flowers.show', ['id' => 7]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/tulipano_rosso.jpg') }}" class="img-fluid rounded" alt="Tulipano rosso"></a>
+            <h5>Tulipano rosso</h5>
             <!--Descrizione floreale-->
             <p>Amore che si svela in un petalo rosso</p>        
         </div>
         <!--Rosa rossa-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/rosa_rossa.jpg') }}" class="img-fluid rounded" alt="Rosa rossa">
-            <h5>Rosa rossa</h5>   
+            <a href="{{ route('flowers.show', ['id' => 1]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/rosa_rossa.jpg') }}" class="img-fluid rounded" alt="Rosa rossa"></a>
+            <h5>Rosa rossa</h5>
             <!--Descrizione floreale-->
             <p>Passione pura in ogni cuore di petalo</p>         
         </div>
         <!--Ranuncolo rosso-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/ranuncolo_rosso.jpg') }}" class="img-fluid rounded" alt="Ranuncolo rosso">
+            <a href="{{ route('flowers.show', ['id' => 67]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/ranuncolo_rosso.jpg') }}" class="img-fluid rounded" alt="Ranuncolo rosso"></a>
             <h5>Ranuncolo rosso</h5>
             <!--Descrizione floreale-->
             <p>Desiderio dolce che sboccia in silenzio</p>

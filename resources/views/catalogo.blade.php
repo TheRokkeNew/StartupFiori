@@ -100,7 +100,12 @@
       <div class="filters-box">
         <h5>🔍 Filtra per:</h5>
         <!--Form di filtreggio-->
-        <form id="filter-form" class="row g-3">          
+        <form id="filter-form" class="row g-3">
+          <!--Nome-->  
+          <div class="col-12"> 
+            <label class="fw-bold" for="name">Nome:</label>
+            <input type="text" name="name" id="name" class="form-control mb-3" placeholder="Creca per nome" value="{{ request('name') }}">       
+          </div>
           <!--Colore-->
           <div class="col-12">
             <label class="fw-bold">Colore:</label>
@@ -114,7 +119,7 @@
               <option value="Rosa">Rosa</option>
               <option value="Arancione">Arancione</option>
               <option value="Azzurro">Azzurro</option>     
-              <option value="Mixdicolori">Mix di colori</option>         
+              <option value="Misti">Misti</option>         
             </select>
           </div>
           <!--Stagione-->

@@ -79,21 +79,23 @@
         <!--Peonia-->
         <div class="col-md-4 text-center  ">
             <a href="{{ route('flowers.show', ['id' => 17]) }}" class="text-decoration-none">
-            <img src="{{ asset('images/occasione/fiori/peonia.jpg') }}" class="img-fluid rounded" alt="Peonia">
-            <h5>Peonia</h5></a>
+            <img src="{{ asset('images/occasione/fiori/peonia.jpg') }}" class="img-fluid rounded" alt="Peonia"></a>
+            <h5>Peonia</h5>
             <!--descrizione floreale-->
             <p>Amore e prosperità per una vita insieme felice</p>
         </div>
         <!--Calla-->
         <div class="col-md-4 text-center  ">
-            <img src="{{ asset('images/occasione/fiori/calla.jpg') }}" class="img-fluid rounded" alt="Calla">
+            <a href="{{ route('flowers.show', ['id' => 75]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/calla.jpg') }}" class="img-fluid rounded" alt="Calla"></a>
             <h5>Calla</h5>
             <!--descrizione floreale-->
             <p>Bellezza e ammirazione per un'unione speciale</p>
         </div>
         <!--Queen of Sweden-->
         <div class="col-md-4 text-center  ">
-            <img src="{{ asset('images/occasione/fiori/queen_sweden.jpg') }}" class="img-fluid rounded" alt="Queen of Sweden ">
+            <a href="{{ route('flowers.show', ['id' => 76]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/queen_sweden.jpg') }}" class="img-fluid rounded" alt="Queen of Sweden "></a>
             <h5>Queen of Sweden </h5>
             <!--descrizione floreale-->
             <p>Magia ed eleganza per l'amore eterno</p>

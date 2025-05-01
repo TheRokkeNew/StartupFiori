@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('care_sun')->nullable();  
             $table->string('care_water')->nullable();
             $table->string('care_soil')->nullable();
+            $table->text('design_use')->nullable(); 
             $table->timestamps();
         });
     }   

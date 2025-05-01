@@ -78,22 +78,25 @@
     <div class="row">
         <!--Gerbera-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/gerbera.jpg') }}" class="img-fluid rounded" alt="Gerbera">
+            <a href="{{ route('flowers.show', ['id' => 78]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/gerbera.jpg') }}" class="img-fluid rounded" alt="Gerbera"></a>
             <h5>Gerbera</h5>
             <!--Descrizione floreale-->
             <p>Gioia pura nel nuovo viaggio della vita che inizia</p>
         </div>
         <!--Rosa bianca-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/rosa.jpg') }}" class="img-fluid rounded" alt="Rosa bianca">
+            <a href="{{ route('flowers.show', ['id' => 4]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/rosa.jpg') }}" class="img-fluid rounded" alt="Rosa bianca"></a>
             <h5>Rosa bianca</h5>
             <!--Descrizione floreale-->
             <p>Candore di un angelo per un amore eterno</p>
         </div>
         <!--Ranuncolo-->
         <div class="col-md-4 text-center">
-            <img src="{{ asset('images/occasione/fiori/ranuncolo.jpg') }}" class="img-fluid rounded" alt="Ranuncolo">
-            <h5>Ranuncolo</h5>  
+            <a href="{{ route('flowers.show', ['id' => 68]) }}" class="text-decoration-none">
+            <img src="{{ asset('images/occasione/fiori/ranuncolo.jpg') }}" class="img-fluid rounded" alt="Ranuncolo"></a> 
+            <h5>Ranuncolo</h5>
 		    <!--Descrizione floreale-->
             <p>Bellezza di un miracolo di una nuova esistenza</p>        
         </div>
