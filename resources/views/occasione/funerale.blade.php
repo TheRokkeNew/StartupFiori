@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('content')
 <style>
@@ -7,7 +8,6 @@
         background-color: #F7CEAB; 
         margin: 10;
         padding: 10;
-        overflow: hidden;
         font-family: 'Lora', serif;
         color: #6C4C3F;
     }
@@ -31,12 +31,12 @@
         font-family: 'Cormorant Garamond', serif;
         font-weight: 600;
         margin-top: 1rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: #6C4C3F;
     }
     p {
         font-family: 'Lora', serif;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         font-style: italic;
         color:color: #6C4C3F;
@@ -80,17 +80,23 @@
         <!--Crisantemo-->
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/crisantemo.jpg') }}" class="img-fluid rounded" alt="Crisantemo">
-            <h5>Crisantemo</h5>            
+            <h5>Crisantemo</h5>     
+	        <!--Descrizione floreale-->
+            <p>Dolore e ricordo per una persona cara</p>       
         </div>
         <!--Garofano-->
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/garofano.jpg') }}" class="img-fluid rounded" alt="Garofano">
-            <h5>Garofano</h5>            
+            <h5>Garofano</h5>   
+	        <!--Descrizione floreale-->
+            <p>Purezza e rispetto nel momento del lutto</p>         
         </div>
         <!--Giglio bianco-->
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/giglio_bianco.jpg') }}" class="img-fluid rounded" alt="Giglio bianco">
-            <h5>Giglio bianco</h5>           
+            <h5>Giglio bianco</h5>     
+	        <!--Descrizione floreale-->
+            <p>Purezza e luce per chi riposa</p>      
         </div>       
     </div>
 </div>

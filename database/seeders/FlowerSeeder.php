@@ -600,7 +600,18 @@ class FlowerSeeder extends Seeder
                 'care_sun' => 'Sole-mezz\'ombra (preferisce il fresco pomeridiano nelle zone calde)',
                 'care_water' => 'Abbondante durante la fioritura, ridurre in inverno',
                 'care_soil' => 'Ricco di humus, ottimo drenaggio'
-            ],           
+            ],  
+            [
+                'name' => 'Crisantemo', 
+                'image' => 'images/catalogo/crisantemo_bianco.jpg', 
+                'color' => 'Bianco puro', 
+                'season' => 'Autunno', 
+                'type' => 'Perenne',
+                'description' => 'Simbolo di verità e purezza nell\'arte floreale orientale. Capolini pieni e longevi',
+                'care_sun' => 'Pieno sole/mezz\'ombra',
+                'care_water' => 'Moderata',
+                'care_soil' => 'Fertile, ben drenato'
+            ],         
             // Delphinium
             [
                 'name' => 'Delphinium', 
@@ -762,6 +773,29 @@ class FlowerSeeder extends Seeder
                 'care_water' => 'Moderata',
                 'care_soil' => 'Ricco di sostanza organica'
             ],
+            [
+                'name' => 'Ranuncolo', 
+                'image' => 'images/catalogo/ranuncolo_rosso.jpg', 
+                'color' => 'Rosso', 
+                'season' => 'Primavera', 
+                'type' => 'Bulbosa',
+                'description' => 'Fiori a coppa con petali stratificati, simbolo di attrazione irresistibile. Effetto vellutato',
+                'care_sun' => 'Pieno sole/mezz\'ombra',
+                'care_water' => 'Abbondante in crescita',
+                'care_soil' => 'Ricco, fresco, ben drenato'
+            ],
+            [
+                'name' => 'Ranuncolo', 
+                'image' => 'images/catalogo/ranuncolo.jpg',
+                'color' => 'Mixdicolori',
+                'season' => 'Primavera-Estate',
+                'type' => 'Bulbosa',
+                'description' => 'Esplosione di colori pastello con petali a stratificazione serrata. Ogni fiore sembra dipinto a mano.',
+                'care_sun' => 'Luce filtrata',
+                'care_water' => 'Moderata (evitare ristagni)',
+                'care_soil' => 'Leggero con sabbia grossolana',
+                'design_use' => 'Centrotavola nuziali, bouquet romantici'
+            ],
             // Rododendro
             [
                 'name' => 'Rododendro', 
@@ -829,6 +863,90 @@ class FlowerSeeder extends Seeder
                 'description' => 'Viola cornuta "Yellow Perfection" con fiori giallo oro. Resiste al freddo',
                 'care_sun' => 'Sole/ombra',
                 'care_water' => 'Regolare',
+                'care_soil' => 'Fresco, ben drenato'
+            ], 
+            //calla
+            [
+                'name' => 'Calla', 
+                'image' => 'images/catalogo/calla.jpg', 
+                'color' => 'Bianco', 
+                'season' => 'Estate', 
+                'type' => 'Perenne',
+                'description' => 'Elegante fiore a calice, simbolo di purezza e bellezza sublime. Forma scultorea e lucentezza cerosa',
+                'care_sun' => 'Mezz\'ombra',
+                'care_water' => 'Abbondante (terreno sempre umido)',
+                'care_soil' => 'Ricco, ben drenato, pH leggermente acido'
+            ],   
+            //queen of sweden
+            [
+                'name' => 'Queen of Sweden', 
+                'image' => 'images/catalogo/queen_sweden.jpg', 
+                'color' => 'Rosa', 
+                'season' => 'Estate-Autunno', 
+                'type' => 'Rosa inglese',
+                'description' => 'Rosa romantica dai petali soffusi di rosa pesca, con delicato profumo di mirra e mandorla',
+                'care_sun' => 'Pieno sole',
+                'care_water' => 'Regolare senza ristagni',
+                'care_soil' => 'Fertile e ben drenato'  
+            ],
+            //garofano colorato 
+            [
+                'name' => 'Garofano', 
+                'image' => 'images/catalogo/garofano.jpg', 
+                'color' => 'Mixdicolori', 
+                'season' => 'Primavera-Estate', 
+                'type' => 'Perenne',
+                'description' => 'Fiori frastagliati dai colori vivaci, simbolo di fascino e distinzione. Profumo speziato',
+                'care_sun' => 'Pieno sole',
+                'care_water' => 'Moderata (resistente alla siccità)',
+                'care_soil' => 'Ben drenato, pH neutro'
+            ],
+            //gerbera colorata
+            [
+                'name' => 'Gerbera', 
+                'image' => 'images/catalogo/gerbera.jpg', 
+                'color' => 'Mixdicolori', 
+                'season' => 'Primavera-Autunno', 
+                'type' => 'Perenne',
+                'description' => 'Grandi margherite dai colori brillanti, portatrici di gioia e solarità. Lunga durata',
+                'care_sun' => 'Luce intensa (no sole diretto estivo)',
+                'care_water' => 'Regolare (evitare ristagni)',
+                'care_soil' => 'Leggero e drenante'
+            ],
+            //Mimosa classica
+            [
+                'name' => 'Mimosa Classica', 
+                'image' => 'images/catalogo/mimosa.jpg', 
+                'color' => 'Giallo', 
+                'season' => 'Inverno', 
+                'type' => 'Albero sempreverde',
+                'description' => 'Simbolo della Festa della Donna. Piumosi capolini gialli dal profumo delicato',
+                'care_sun' => 'Pieno sole',
+                'care_water' => 'Moderata (resistente alla siccità)',
+                'care_soil' => 'Acido, sabbioso'
+            ],         
+            //mimosa deluxe 
+            [
+                'name' => 'Mimosa Deluxe', 
+                'image' => 'images/catalogo/mimosaDeluxe.jpg', 
+                'color' => 'Giallo', 
+                'season' => 'Inverno', 
+                'type' => 'Varietà premium',
+                'description' => 'Selezione speciale con fiori più grandi e intensamente profumati. Portamento elegante',
+                'care_sun' => 'Pieno sole',
+                'care_water' => 'Moderata con drenaggio perfetto',
+                'care_soil' => 'Acido, arricchito con torba'
+            ],
+            //Mimosa elegante 
+            [
+                'name' => 'Mimosa Elegante', 
+                'image' => 'images/catalogo/mimosaElegante.jpg', 
+                'color' => 'Giallo', 
+                'season' => 'Primavera', 
+                'type' => 'Ibrido ornamentale',
+                'description' => 'Varietà dai rami armoniosi e fiori particolarmente vaporosi. Fogliame decorativo',
+                'care_sun' => 'Pieno sole/mezz\'ombra',
+                'care_water' => 'Regolare senza eccessi',
                 'care_soil' => 'Fresco, ben drenato'
             ]         
         ];           

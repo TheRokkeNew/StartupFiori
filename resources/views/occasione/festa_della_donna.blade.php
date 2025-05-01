@@ -1,13 +1,12 @@
 @extends('layouts.app')
 @section('content')
 <style>
-     /*importa dei font (Great Vibes,Lora) di Google Fonts per utilizzarli nella tua pagina web */
-     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Lora:ital@0;1&display=swap');
+    /*importa dei font (Great Vibes,Lora) di Google Fonts per utilizzarli nella tua pagina web */
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Lora:ital@0;1&display=swap');
     body {
         background-color: #F7CEAB; 
         margin: 10;
         padding: 10;
-        overflow: hidden;
         font-family: 'Lora', serif;
         color: #6C4C3F;
     }
@@ -19,7 +18,7 @@
         font-family: 'Great Vibes', cursive;
         font-size: 3.5rem;
         color: #6C4C3F;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.5rem;
     }
     h3 {
         font-family: 'Cormorant Garamond', serif;
@@ -31,16 +30,15 @@
         font-family: 'Cormorant Garamond', serif;
         font-weight: 600;
         margin-top: 1rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: #6C4C3F;
     }
     p {
         font-family: 'Lora', serif;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         font-style: italic;
         color:color: #6C4C3F;
-        margin-top: 0;
     }
     .container {
         max-width: 800px; 
@@ -72,7 +70,7 @@
     <!-- Titolo della pagina -->
     <h1>Festa della donna</h1>
     <!-- Sottotitolo descrittivo -->
-    <p>La mimosa rappresenta <strong>forza, sensibilità e resilienza</strong></p>
+    <p>La mimosa rappresenta forza, sensibilità e resilienza!</p>
     <img src="{{ asset('images/occasione/8marzo.jpg') }}" class="img-fluid" alt="8Marzo">
     <!-- Titolo della sezione fiori -->
     <h3 class="mt-3 mb-3">Le nostre composizioni di mimose</h3>
@@ -82,16 +80,22 @@
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/mimosa.jpg') }}" class="img-fluid rounded" alt="Mimosa Classica">
             <h5>Mimosa Classica</h5>
+            <!--descrizione floreale-->
+            <p>Il fascino senza tempo di un gesto tradizionale</p>
         </div>
         <!--Mimosa Deluxe-->
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/mimosaDeluxe.jpg') }}" class="img-fluid rounded" alt="Mimosa Deluxe">
             <h5>Mimosa Deluxe</h5>
+            <!--descrizione floreale-->
+            <p>Lusso naturale per chi merita solo il meglio</p>
         </div>
         <!--Mimosa Elegante-->
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/mimosaElegante.jpg') }}" class="img-fluid rounded" alt="Mimosa Elegante">
-            <h5>Mimosa Elegante</h5>         
+            <h5>Mimosa Elegante</h5> 
+            <!--descrizione floreale-->
+            <p>Grazia che incanta con leggerezza e stile</p>        
         </div>
     </div>
 </div>

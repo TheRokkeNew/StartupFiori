@@ -7,7 +7,6 @@
         background-color: #F7CEAB; 
         margin: 10;
         padding: 10;
-        overflow: hidden;
         font-family: 'Lora', serif;
         color: #6C4C3F;
     }
@@ -31,12 +30,12 @@
         font-family: 'Cormorant Garamond', serif;
         font-weight: 600;
         margin-top: 1rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: #6C4C3F;
     }
     p {
         font-family: 'Lora', serif;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         font-style: italic;
         color:color: #6C4C3F;
@@ -79,18 +78,25 @@
     <div class="row">
         <!--Peonia-->
         <div class="col-md-4 text-center  ">
+            <a href="{{ route('flowers.show', ['id' => 17]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/peonia.jpg') }}" class="img-fluid rounded" alt="Peonia">
-            <h5>Peonia</h5>
+            <h5>Peonia</h5></a>
+            <!--descrizione floreale-->
+            <p>Amore e prosperità per una vita insieme felice</p>
         </div>
         <!--Calla-->
         <div class="col-md-4 text-center  ">
             <img src="{{ asset('images/occasione/fiori/calla.jpg') }}" class="img-fluid rounded" alt="Calla">
             <h5>Calla</h5>
+            <!--descrizione floreale-->
+            <p>Bellezza e ammirazione per un'unione speciale</p>
         </div>
         <!--Queen of Sweden-->
         <div class="col-md-4 text-center  ">
             <img src="{{ asset('images/occasione/fiori/queen_sweden.jpg') }}" class="img-fluid rounded" alt="Queen of Sweden ">
             <h5>Queen of Sweden </h5>
+            <!--descrizione floreale-->
+            <p>Magia ed eleganza per l'amore eterno</p>
         </div>        
     </div>
 </div>
@@ -121,3 +127,4 @@
     });
 </script>
 @endsection
+

@@ -7,7 +7,6 @@
         background-color: #F7CEAB; 
         margin: 10;
         padding: 10;
-        overflow: hidden;
         font-family: 'Lora', serif;
         color: #6C4C3F;
     }
@@ -31,12 +30,12 @@
         font-family: 'Cormorant Garamond', serif;
         font-weight: 600;
         margin-top: 1rem;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         color: #6C4C3F;
     }
     p {
         font-family: 'Lora', serif;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         line-height: 1.6;
         font-style: italic;
         color:color: #6C4C3F;
@@ -81,16 +80,22 @@
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/gerbera.jpg') }}" class="img-fluid rounded" alt="Gerbera">
             <h5>Gerbera</h5>
+            <!--Descrizione floreale-->
+            <p>Gioia pura nel nuovo viaggio della vita che inizia</p>
         </div>
         <!--Rosa bianca-->
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/rosa.jpg') }}" class="img-fluid rounded" alt="Rosa bianca">
             <h5>Rosa bianca</h5>
+            <!--Descrizione floreale-->
+            <p>Candore di un angelo per un amore eterno</p>
         </div>
         <!--Ranuncolo-->
         <div class="col-md-4 text-center">
             <img src="{{ asset('images/occasione/fiori/ranuncolo.jpg') }}" class="img-fluid rounded" alt="Ranuncolo">
-            <h5>Ranuncolo</h5>       
+            <h5>Ranuncolo</h5>  
+		    <!--Descrizione floreale-->
+            <p>Bellezza di un miracolo di una nuova esistenza</p>        
         </div>
     </div>
 </div>

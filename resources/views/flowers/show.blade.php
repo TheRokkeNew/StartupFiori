@@ -85,7 +85,7 @@
         </div>
 
         <!-- Pulsante torna al catalogo-->
-        <a href="javascript:history.back()" class="btn btn-success w-100 mt-4">Torna al Catalogo</a>
+        <a href="javascript:history.back()" class="btn btn-success w-100 mt-4">Torna indietro</a>
     </div>
 </div>
 

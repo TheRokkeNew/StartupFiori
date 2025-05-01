@@ -113,7 +113,8 @@
               <option value="Viola">Viola</option>
               <option value="Rosa">Rosa</option>
               <option value="Arancione">Arancione</option>
-              <option value="Azzurro">Azzurro</option>              
+              <option value="Azzurro">Azzurro</option>     
+              <option value="Mixdicolori">Mix di colori</option>         
             </select>
           </div>
           <!--Stagione-->
@@ -144,6 +145,10 @@
               <option value="Rizomatoso">Rizomatoso</option> 
               <option value="Biennale">Biennale</option> 
               <option value="Rampicante">Rampicante</option>
+              <option value="Rosa inglese">Rosa Inglese</option>
+              <option value="Albero sempreverde">Albero sempreverde</option>
+              <option value="Varietà premium">Varietà premium</option>
+              <option value="Ibrido ornamentale ">Ibrido ornamentale </option>                           
             </select>
           </div>
 
