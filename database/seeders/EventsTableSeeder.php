@@ -6,6 +6,7 @@ use App\Models\Event;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
+// popola la tabella events con dati di esempio per gli eventi promozionali
 class EventsTableSeeder extends Seeder
 {
     public function run()
@@ -14,7 +15,7 @@ class EventsTableSeeder extends Seeder
             [
                 'name' => 'San Valentino',
                 'slug' => 'san-valentino',
-                'date' => Carbon::create(2025, 2, 14),
+                'date' => Carbon::create(2025, 2, 24),
                 'content' => 'Sconto del 20% sui nostri bouquet romantici! ❤️ Offerta valida fino al 14 febbraio.',
                 'image_path' => 'events/san-valentino.jpg',
                 'coupon_code' => 'LOVE2025',
