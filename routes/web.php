@@ -7,21 +7,21 @@ use App\Http\Controllers\OccasionController;
 use App\Http\Controllers\FlowerController;
 use App\Http\Controllers\PotaturaController;
 
-
-
+//homepage
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Registrazione
+//registrazione
 Route::get('/register',[UserController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register',[UserController::class, 'register'])->name('registerUser');
-
+//login
 Route::get('/login',[UserController::class,'showLoginForm'])->name('login');
 Route::post('/login',[UserController::class,'login'])->name('loginUser');
 
+//crea un admin
 Route::get("/createAdmin",[UserController::class,"createAdmin"])->name("createAdmin");
-
+//gestione permessi
 Route::get("/handlePermissions",[UserController::class,"HandlePermissions"])->name("handlePermissions");
 
 //Pannello d'entrata
@@ -37,20 +37,19 @@ Route::put('/admin/panel/{user}', [PermissionsController::class, 'AdminEditUser'
 //Elimina utente
 Route::delete("/admin/panel/{user}",[PermissionsController::class,"AdminDestroyUser"])->name("admin.users.destroy")->middleware('auth', 'role:admin');
 
-
-
+//profilo utente
 Route::get('/userProfile',[UserController::class,'showUserProfile'])->name('showUserProfile');
 Route::post('/userProfile',[UserController::class,'updateUserProfile'])->name('updateUserProfile');
-
+//logout
 Route::post('/logout',[UserController::class,'logout'])->name('logoutUser');
-
+//upload immagine profilo
 Route::post('/upload-image',[UserController::class,'uploadImage'])->name('upload.image');
 
 //pagina per ogni occasione 
 Route::get('/occasione/{tipo}', [OccasionController::class, 'show']);
 
 
-//CRUD
+//CRUD per i fiori 
 //mostra catalogo
 Route::get('/flowers', [FlowerController::class, 'index'])->name('flowers.index');
 //form creazione
