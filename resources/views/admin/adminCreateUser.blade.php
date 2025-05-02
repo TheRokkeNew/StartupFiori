@@ -26,7 +26,6 @@
                 <div class="card-body">
                     <form action="{{ route('admin.users.store') }}" method="POST">
                         @csrf
-
                         <!-- Nome -->
                         <div class="mb-3">
                             <label for="name" class="form-label">Nome</label>

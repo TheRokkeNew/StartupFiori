@@ -18,6 +18,7 @@ use Spatie\Permission\Models\Permission;
 
 class UserController extends Controller
 {
+    use HasRoles;
     public function showRegistrationForm(){
         return view('register');
     }
@@ -62,15 +63,15 @@ class UserController extends Controller
     public function HandlePermissions(){
         $user = User::where("name", "admin")->first();
         $user->assignRole('admin');
-        $role = Role::where("name","admin")->first();
-        if($role and $user){
-            DB::table('role_user')->insert([
-                "user_id" => $user->id,
-                "role_id" => $role->id,
-                "user_name" => $user->name,
-                "role_name" => $role->name
-            ]);
-        }
+        // $role = Role::where("name","admin")->first();
+        // if($role and $user){
+        //     DB::table('role_user')->insert([
+        //         "user_id" => $user->id,
+        //         "role_id" => $role->id,
+        //         "user_name" => $user->name,
+        //         "role_name" => $role->name
+        //     ]);
+        // }
 
         return redirect()->route("home");
     }

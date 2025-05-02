@@ -11,7 +11,15 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
+<<<<<<< Updated upstream
     use HasFactory, Notifiable, HasRoles;
+=======
+<<<<<<< HEAD
+    use HasFactory, Notifiable,HasRoles;
+=======
+    use HasFactory, Notifiable, HasRoles;
+>>>>>>> 1bd266c01f0e4836233210e2c917ab1aa837dacd
+>>>>>>> Stashed changes
 
     /**
      * The attributes that are mass assignable.
