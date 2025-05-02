@@ -104,7 +104,7 @@
           <!--Nome-->  
           <div class="col-12"> 
             <label class="fw-bold" for="name">Nome:</label>
-            <input type="text" name="name" id="name" class="form-control mb-3" placeholder="Creca per nome" value="{{ request('name') }}">       
+            <input type="text" name="name" id="name" class="form-control mb-3" placeholder="Cerca per nome" value="{{ request('name') }}">       
           </div>
           <!--Colore-->
           <div class="col-12">
