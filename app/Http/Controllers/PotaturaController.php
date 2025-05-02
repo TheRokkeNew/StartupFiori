@@ -239,8 +239,7 @@ class PotaturaController extends Controller
                 'immagine' => 'weigela.png',
                 'potatura' => [5, 6],
             ],            
-        ];
-    
+        ];    
         return view('potatura', compact('piante'));
     }
 }

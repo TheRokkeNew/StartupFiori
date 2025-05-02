@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <style>
-     /*importa dei font (Great Vibes,Lora) di Google Fonts per utilizzarli nella tua pagina web */
-     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Lora:ital@0;1&display=swap');
+    /*importa dei font (Great Vibes,Lora) di Google Fonts per utilizzarli nella tua pagina web */
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Lora:ital@0;1&display=swap');
     body {
         background-color: #F7CEAB; 
         margin: 10;
@@ -50,8 +50,8 @@
         opacity: 0;
         transition: opacity 0.3s ease;
     }
-     /*effetti*/
-     .img-fluid.loaded {
+    /*effetti*/
+    .img-fluid.loaded {
         opacity: 1;
     }
     h1, h3, h5, p {
@@ -65,22 +65,18 @@
         transform: translateY(0);
     }
 </style>
-<!--Contenitore principale-->
+
 <div class="container text-center">
-    <!-- Titolo della pagina -->
     <h1>San Valentino</h1>
-    <!-- Sottotitolo descrittivo -->
     <p>Dichiara il tuo amore con i fiori più romantici!</p>
     <img src="{{ asset('images/occasione/san_valentino.jpg') }}" class="img-fluid" alt="San Valentino">
-    <!-- Titolo della sezione fiori -->
     <h3 class="mt-3 mb-3">I nostri fiori per il tuo bouquet ideale</h3>
-    <!-- Griglia Bootstrap a 3 colonne -->
-    <div class="row">        
+    <div class="row">   
+        <!--Tulipano rosso-->     
         <div class="col-md-4 text-center">
             <a href="{{ route('flowers.show', ['id' => 7]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/tulipano_rosso.jpg') }}" class="img-fluid rounded" alt="Tulipano rosso"></a>
             <h5>Tulipano rosso</h5>
-            <!--Descrizione floreale-->
             <p>Amore che si svela in un petalo rosso</p>        
         </div>
         <!--Rosa rossa-->
@@ -88,7 +84,6 @@
             <a href="{{ route('flowers.show', ['id' => 1]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/rosa_rossa.jpg') }}" class="img-fluid rounded" alt="Rosa rossa"></a>
             <h5>Rosa rossa</h5>
-            <!--Descrizione floreale-->
             <p>Passione pura in ogni cuore di petalo</p>         
         </div>
         <!--Ranuncolo rosso-->
@@ -96,32 +91,33 @@
             <a href="{{ route('flowers.show', ['id' => 67]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/ranuncolo_rosso.jpg') }}" class="img-fluid rounded" alt="Ranuncolo rosso"></a>
             <h5>Ranuncolo rosso</h5>
-            <!--Descrizione floreale-->
             <p>Desiderio dolce che sboccia in silenzio</p>
         </div>
     </div>
 </div>
+
+<!--effetti pagina-->
 <script>
-    // Aspetta che il DOM sia completamente caricato prima di eseguire lo script
+    //aspetta che il DOM sia completamente caricato prima di eseguire lo script
     document.addEventListener("DOMContentLoaded", () => {
-        // Seleziona tutte le immagini con classe "img-fluid"
+        //seleziona tutte le immagini 
         const images = document.querySelectorAll("img.img-fluid");
-        // Seleziona tutti gli elementi di testo (h1, h3, h5, p)
+        //seleziona tutti gli elementi di testo
         const texts = document.querySelectorAll("h1, h3, h5, p");
 
-        // Funzione che aggiunge la classe "loaded" agli elementi
+        //aggiunge la classe "loaded" agli elementi
         const showElements = () => {
             images.forEach(img => img.classList.add("loaded"));
             texts.forEach(text => text.classList.add("loaded"));
         };
 
-        // Per ogni immagine trovata
+        //per ogni immagine trovata
         images.forEach(img => {
-            // Verifica se l'immagine è già stata caricata (nella cache del browser)
+            //verifica se l'immagine è già stata caricata
             if (img.complete) {
-                showElements(); // Se sì, mostra subito gli elementi
+                showElements(); //mostra subito gli elementi
             } else {
-                // Altrimenti, aspetta che l'immagine finisca di caricarsi
+                //aspetta che l'immagine finisca di caricarsi
                 img.onload = showElements;
             }
         });

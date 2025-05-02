@@ -50,8 +50,8 @@
         opacity: 0;
         transition: opacity 0.3s ease;
     }
-     /*effetti*/
-     .img-fluid.loaded {
+    /*effetti*/
+    .img-fluid.loaded {
         opacity: 1;
     }
     h1, h3, h5, p {
@@ -65,23 +65,18 @@
         transform: translateY(0);
     }
 </style>
-<!--Contenitore principale-->
+
 <div class="container text-center">
-    <!-- Titolo della pagina -->
     <h1>Festa della donna</h1>
-    <!-- Sottotitolo descrittivo -->
     <p>La mimosa rappresenta forza, sensibilità e resilienza!</p>
     <img src="{{ asset('images/occasione/8marzo.jpg') }}" class="img-fluid" alt="8Marzo">
-    <!-- Titolo della sezione fiori -->
     <h3 class="mt-3 mb-3">Le nostre composizioni di mimose</h3>
-    <!-- Griglia Bootstrap a 3 colonne -->
     <div class="row">
         <!--Mimosa Classica-->
         <div class="col-md-4 text-center">
             <a href="{{ route('flowers.show', ['id' => 79]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/mimosa.jpg') }}" class="img-fluid rounded" alt="Mimosa Classica"></a>
             <h5>Mimosa Classica</h5>
-            <!--descrizione floreale-->
             <p>Il fascino senza tempo di un gesto tradizionale</p>
         </div>
         <!--Mimosa Deluxe-->
@@ -89,7 +84,6 @@
             <a href="{{ route('flowers.show', ['id' => 80]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/mimosaDeluxe.jpg') }}" class="img-fluid rounded" alt="Mimosa Deluxe"></a>
             <h5>Mimosa Deluxe</h5>
-            <!--descrizione floreale-->
             <p>Lusso naturale per chi merita solo il meglio</p>
         </div>
         <!--Mimosa Elegante-->
@@ -97,32 +91,33 @@
             <a href="{{ route('flowers.show', ['id' => 81]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/mimosaElegante.jpg') }}" class="img-fluid rounded" alt="Mimosa Elegante"></a>
             <h5>Mimosa Elegante</h5>
-            <!--descrizione floreale-->
             <p>Grazia che incanta con leggerezza e stile</p>        
         </div>
     </div>
 </div>
+
+<!--effetti pagina-->
 <script>
-    // Aspetta che il DOM sia completamente caricato prima di eseguire lo script
+    //aspetta che il DOM sia completamente caricato prima di eseguire lo script
     document.addEventListener("DOMContentLoaded", () => {
-        // Seleziona tutte le immagini con classe "img-fluid"
+        //seleziona tutte le immagini
         const images = document.querySelectorAll("img.img-fluid");
-        // Seleziona tutti gli elementi di testo (h1, h3, h5, p)
+        //seleziona tutti gli elementi di testo
         const texts = document.querySelectorAll("h1, h3, h5, p");
 
-        // Funzione che aggiunge la classe "loaded" agli elementi
+        //aggiunge la classe "loaded" agli elementi
         const showElements = () => {
             images.forEach(img => img.classList.add("loaded"));
             texts.forEach(text => text.classList.add("loaded"));
         };
 
-        // Per ogni immagine trovata
+        //per ogni immagine trovata
         images.forEach(img => {
-            // Verifica se l'immagine è già stata caricata (nella cache del browser)
+            //verifica se l'immagine è già stata caricata
             if (img.complete) {
-                showElements(); // Se sì, mostra subito gli elementi
+                showElements(); //mostra subito gli elementi
             } else {
-                // Altrimenti, aspetta che l'immagine finisca di caricarsi
+                //aspetta che l'immagine finisca di caricarsi
                 img.onload = showElements;
             }
         });

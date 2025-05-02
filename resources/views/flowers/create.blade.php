@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <style>
   body {
@@ -8,17 +7,14 @@
 </style>
 <div class="container mt-5">
   <h2 class="text-center mb-4">➕ Aggiungi un nuovo fiore</h2>
-  <!--form per inserimento fiori-->
   <form action="{{ route('flowers.store') }}" method="POST" enctype="multipart/form-data" class="bg-white p-4 rounded shadow">
     @csrf <!-- Token di sicurezza -->
 
-    <!--nome fiore-->
     <div class="mb-3">    
       <label for="name" class="form-label">Nome Fiore</label>
       <input type="text" name="name" class="form-control" required>
     </div>
 
-    <!--colore-->
     <div class="mb-3">      
       <label for="color" class="form-label">Colore</label>
       <select name="color" class="form-select" required>
@@ -33,7 +29,6 @@
       </select>
     </div>
 
-    <!--stagione-->
     <div class="mb-3">
       <label for="season" class="form-label">Stagione</label>
       <select name="season" class="form-select" required>
@@ -48,7 +43,6 @@
       </select>
     </div>
 
-    <!--tipo-->
     <div class="mb-3">
       <label for="type" class="form-label">Tipo</label>
       <select name="type" class="form-select" required>
@@ -63,13 +57,11 @@
       </select>
     </div>
 
-    <!--descrizione-->
     <div class="mb-3">
       <label for="description" class="form-label">Descrizione</label>
       <textarea name="description" class="form-control" rows="3"></textarea>
     </div>
 
-    <!--cura fiore-->
     <div class="mb-3">
       <label class="form-label">Cura del fiore</label>
       <div class="row">
@@ -105,13 +97,11 @@
       </div>
     </div>
 
-    <!--immagine-->
     <div class="mb-3">
       <label for="image" class="form-label">Immagine [Max 2MB]</label>
       <input type="file" name="image" class="form-control" accept="image/*" required>
     </div>
 
-    <!-- Pulsanti salva fiore e indietro -->
     <button type="submit" class="btn btn-success">💾 Salva Fiore</button>
     <a href="{{ route('flowers.index') }}" class="btn btn-secondary ms-2">↩️ Indietro</a>
   </form> 

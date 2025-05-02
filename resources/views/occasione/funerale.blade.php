@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 @section('content')
 <style>
@@ -66,23 +65,18 @@
         transform: translateY(0);
     }
 </style>
-<!--Contenitore principale-->
+
 <div class="container text-center">
-    <!-- Titolo della pagina -->
     <h1>Funerale</h1>
-    <!-- Sottotitolo descrittivo -->
     <p>Un tributo floreale per onorare chi non c’è più</p>
     <img src="{{ asset('images/occasione/funerale.jpg') }}" class="img-fluid" alt="Funerale">
-    <!-- Titolo della sezione fiori -->
     <h3 class="mt-3 mb-3">I nostri fiori per il tuo bouquet ideale</h3>
-    <!-- Griglia Bootstrap a 3 colonne -->
     <div class="row">
         <!--Crisantemo-->
         <div class="col-md-4 text-center">
             <a href="{{ route('flowers.show', ['id' => 52]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/crisantemo.jpg') }}" class="img-fluid rounded" alt="Crisantemo"></a>
             <h5>Crisantemo</h5>
-	        <!--Descrizione floreale-->
             <p>Dolore e ricordo per una persona cara</p>       
         </div>
         <!--Garofano-->
@@ -90,7 +84,6 @@
             <a href="{{ route('flowers.show', ['id' => 77]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/garofano.jpg') }}" class="img-fluid rounded" alt="Garofano"></a>
             <h5>Garofano</h5>
-	        <!--Descrizione floreale-->
             <p>Purezza e rispetto nel momento del lutto</p>         
         </div>
         <!--Giglio bianco-->
@@ -98,32 +91,33 @@
             <a href="{{ route('flowers.show', ['id' => 14]) }}" class="text-decoration-none">
             <img src="{{ asset('images/occasione/fiori/giglio_bianco.jpg') }}" class="img-fluid rounded" alt="Giglio bianco"></a>
             <h5>Giglio bianco</h5>
-	        <!--Descrizione floreale-->
             <p>Purezza e luce per chi riposa</p>      
         </div>       
     </div>
 </div>
+
+<!--effetti pagina-->
 <script>
-    // Aspetta che il DOM sia completamente caricato prima di eseguire lo script
+    //aspetta che il DOM sia completamente caricato prima di eseguire lo script
     document.addEventListener("DOMContentLoaded", () => {
-        // Seleziona tutte le immagini con classe "img-fluid"
+        //seleziona tutte le immagini
         const images = document.querySelectorAll("img.img-fluid");
-        // Seleziona tutti gli elementi di testo (h1, h3, h5, p)
+        //seleziona tutti gli elementi di testo
         const texts = document.querySelectorAll("h1, h3, h5, p");
 
-        // Funzione che aggiunge la classe "loaded" agli elementi
+        //aggiunge la classe "loaded" agli elementi
         const showElements = () => {
             images.forEach(img => img.classList.add("loaded"));
             texts.forEach(text => text.classList.add("loaded"));
         };
 
-        // Per ogni immagine trovata
+        //per ogni immagine trovata
         images.forEach(img => {
-            // Verifica se l'immagine è già stata caricata (nella cache del browser)
+            //verifica se l'immagine è già stata caricata
             if (img.complete) {
-                showElements(); // Se sì, mostra subito gli elementi
+                showElements(); //mostra subito gli elementi
             } else {
-                // Altrimenti, aspetta che l'immagine finisca di caricarsi
+                //aspetta che l'immagine finisca di caricarsi
                 img.onload = showElements;
             }
         });

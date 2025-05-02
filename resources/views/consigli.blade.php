@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
 <style>
@@ -128,6 +127,7 @@
             ];
         @endphp
 
+        <!--inserimento delle card-->
         @foreach ($consigli as $consiglio)
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card-simple shadow-sm">

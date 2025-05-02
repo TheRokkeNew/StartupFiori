@@ -95,18 +95,14 @@
 <div class="container mt-4">
   <h1 class="text-center">🌸 Catalogo Fiori 🌼</h1>
   <div class="row">    
-    <!--Filtri-->
     <div class="col-md-3">
       <div class="filters-box">
         <h5>🔍 Filtra per:</h5>
-        <!--Form di filtreggio-->
         <form id="filter-form" class="row g-3">
-          <!--Nome-->  
           <div class="col-12"> 
             <label class="fw-bold" for="name">Nome:</label>
             <input type="text" name="name" id="name" class="form-control mb-3" placeholder="Cerca per nome" value="{{ request('name') }}">       
           </div>
-          <!--Colore-->
           <div class="col-12">
             <label class="fw-bold">Colore:</label>
             <select name="color" class="form-select">
@@ -122,7 +118,6 @@
               <option value="Misti">Misti</option>         
             </select>
           </div>
-          <!--Stagione-->
           <div class="col-12">
             <label class="fw-bold">Stagione:</label>
             <select name="season" class="form-select">
@@ -137,7 +132,6 @@
               <option value="Annuale">Annuale</option>
             </select>
           </div>
-          <!--Tipo-->
           <div class="col-12">
             <label class="fw-bold">Tipo:</label>
             <select name="type" class="form-select">
@@ -157,18 +151,16 @@
             </select>
           </div>
 
-          <!--Pulsante applica filtri-->
           <div class="col-12">
             <button type="submit" class="btn btn-success w-100 mt-3">Filtra</button>
           </div>
 
-          <!--Pulsante reset filtri-->
           <div class="col-12">
             <button type="reset" id="reset-filters" class="btn btn-secondary w-100 mt-2">Reset Filtri</button>
           </div>
         </form>
       </div>  
-      <!--Aggiungi fiore-->
+
 		@role('admin')
 			<div class="d-flex justify-content-end mb-3">
 				<a href="{{ url('/flowers/create') }}" class="btn btn-success me-2">➕ Aggiungi Fiore</a>
@@ -176,36 +168,32 @@
 		@endrole     
     </div>
 
-    <!--Catalogo-->
+    <!--card dei fiori-->
     <div class="col-md-9">
-      <!-- Contenitore per le card dei fiori -->
       <div id="flower-list" class="row row-cols-1 row-cols-md-3 g-4"></div>
-
-      <!-- Paginazione -->
       <div id="pagination" class="d-flex justify-content-center mt-4"></div>
     </div>
   </div>
 </div>
 
-<!--Script JS per caricamento Ajax-->
+<!--libreria jquery-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
 $(document).ready(function() {
-
-  //Funzione per caricare i fiori (con paginazione e filtri)
+  //carica i fiori con paginazione e filtri
   function loadFlowers(page = 1, filters = {}) {
     $.ajax({
       //URL della route con pagina
       url: '/flowers?page=' + page, 
       method: 'GET',
-      //Invia i filtri al controller
+      //invia i filtri al controller
       data: filters, 
       success: function(response) {
         let flowerList = $('#flower-list');
-        //Svuota prima di caricare nuovi fiori
+        //svuota prima di caricare nuovi fiori
         flowerList.empty(); 
-
-        //Crea una card per ogni fiore
+        //crea una card per ogni fiore
         response.data.forEach(flower => {
           let card = `
             <div class="col">
@@ -232,36 +220,39 @@ $(document).ready(function() {
                 </div>
               </div>
             </div>`;
-          //Aggiunge la card alla lista
+          //aggiunge la card alla lista
           flowerList.append(card); 
         });
-        //Aggiorna i pulsanti di paginazione
+        //aggiorna i pulsanti di paginazione
         updatePagination(response); 
-        //Torna in cima alla pagina
+        //torna in cima alla pagina
         window.scrollTo(0, 0); 
       }
     });
   }
 
-  //Funzione per gestire la paginazione dinamica
+  //gestire la paginazione dinamica
   function updatePagination(response) {
+    //seleziona l'elemento HTML con ID 'pagination' e lo svuota
     let pagination = $('#pagination');
     pagination.empty();
-    //Se ci sono più pagine, mostra i pulsanti
+    //verifica se ci sono più pagine da visualizzare
     if (response.last_page > 1) {
+      //mostrato solo se non è già alla prima pagina
       let firstPage = response.current_page > 1 
         ? `<button class="btn btn-outline-primary me-1" data-page="1"><<</button>` 
         : '';
       let prevPage = response.current_page > 1 
         ? `<button class="btn btn-outline-primary me-1" data-page="${response.current_page - 1}">⬅</button>` 
         : '';
+      //mostrato solo se non è all'ultima pagina
       let nextPage = response.current_page < response.last_page 
         ? `<button class="btn btn-outline-primary ms-1" data-page="${response.current_page + 1}">➡</button>` 
         : '';
       let lastPage = response.current_page < response.last_page 
         ? `<button class="btn btn-outline-primary ms-1" data-page="${response.last_page}">>></button>` 
         : '';
-
+      //costruisce e inserisce il codice HTML completo della paginazione
       pagination.html(
         firstPage + 
         prevPage + 
@@ -272,33 +263,33 @@ $(document).ready(function() {
     }
   }
 
-  //Quando clicchi su una freccia di paginazione
+  //quando clicchi su una freccia di paginazione
   $(document).on('click', '#pagination button', function() {
-    //Prende la pagina da caricare
+    //prende la pagina da caricare
     let page = $(this).data('page'); 
-    //Prende i filtri attivi
+    //prende i filtri attivi
     let filters = $('#filter-form').serialize(); 
-    //Carica i fiori della nuova pagina
+    //carica i fiori della nuova pagina
     loadFlowers(page, filters); 
   });
 
-  //Quando invii il form dei filtri
+  //quando invii il form dei filtri
   $('#filter-form').submit(function(event) {
-    //Evita il refresh
+    //evita il refresh
     event.preventDefault(); 
-    //Ottiene tutti i filtri scelti
+    //ottiene tutti i filtri scelti
     let filters = $(this).serialize();
-    //Carica i risultati con i filtri
+    //carica i risultati con i filtri
     loadFlowers(1, filters); 
   });
 
-  //Quando clicchi su "Reset Filtri"
+  //quando clicchi su "Reset Filtri"
   $('#reset-filters').click(function() {
-    $('#filter-form')[0].reset(); //Reset dei filtri
-    loadFlowers(); //Ricarica tutti i fiori
+    $('#filter-form')[0].reset(); //reset dei filtri
+    loadFlowers(); //ricarica tutti i fiori
   });
 
-  //Al primo caricamento, mostra tutti i fiori
+  //al primo caricamento, mostra tutti i fiori
   loadFlowers();
 });
 </script>

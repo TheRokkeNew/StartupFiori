@@ -29,10 +29,8 @@
 </style>
 
 <div class="container my-4 body-bg">
-    <!--Titolo principale-->
     <h2 class="mb-4 text-center">Calendario per la potatura di piante e alberi</h2>
     
-    <!--Box informativo con suggerimenti-->
     <div class="alert alert-info">
         ✅ <strong>Alberi da frutto:</strong> Inverno (potatura di formazione) o estate (diradamento)<br>
         ✅ <strong>Piante da fiore:</strong> Dopo la fioritura per non perdere i boccioli<br>
@@ -40,11 +38,9 @@
         ❌ <strong>Da evitare:</strong> Potature in autunno (rischio di gelate e malattie)
     </div>
     
-    <!--Sezione filtri-->
     <div class="mb-3 text-center">
         <h5>Filtra per Mese:</h5>
         <form id="filter-form">
-            <!--Dropdown per selezione mese-->
             <select name="month" class="form-select">
                 <option value="">Tutti</option>
                 <option value="Gen">Gen</option>
@@ -60,7 +56,7 @@
                 <option value="Nov">Nov</option>
                 <option value="Dic">Dic</option>
             </select>
-            <!--Pulsanti azione-->
+
             <button type="submit" class="btn btn-success w-100 mt-3">Filtra</button>
             <button type="reset" id="reset-filters" class="btn btn-secondary w-100 mt-2">Reset Filtri</button>
         </form>
@@ -71,9 +67,7 @@
         <table class="table table-bordered text-center align-middle">
             <thead class="table-success">
                 <tr>
-                    <!--Intestazione colonna nomi piante-->
                     <th scope="col">Piante e alberi</th>
-                    <!--Intestazioni colonne mesi-->
                     @foreach (['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic'] as $index => $mese)
                         <th scope="col" class="col-mese col-{{ $index + 1 }}">{{ $mese }}</th>
                     @endforeach
@@ -83,11 +77,9 @@
                 <!--Loop attraverso tutte le piante-->
                 @foreach ($piante as $pianta)
                     <tr>
-                        <!--Nome pianta-->
                         <td class="table text-center align-middle fw-bold">
                             {{ $pianta['nome'] }}
                         </td>
-                        <!--Celle per ogni mese (1-12)-->
                         @foreach (range(1, 12) as $mese)
                             <td class="col-mese col-{{ $mese }} {{ in_array($mese, $pianta['potatura']) ? 'p-0' : '' }}">
                                 <!--Mostra immagine solo se il mese è nel periodo di potatura-->
@@ -105,96 +97,101 @@
         </table>
     </div>
     
-    <!--Script per la gestione dei filtri-->
+    <!--gestione dei filtri-->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            //Riferimenti agli elementi del form
+            //riferimenti agli elementi del form
             const filterForm = document.getElementById('filter-form');
             const resetButton = document.getElementById('reset-filters');
             const monthSelect = document.querySelector('select[name="month"]');
             
-            //Mappa i nomi dei mesi ai loro numeri (1-12)
+            //mappa i nomi dei mesi ai loro numeri
             const monthMap = {
                 'Gen': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 
                 'Mag': 5, 'Giu': 6, 'Lug': 7, 'Ago': 8, 
                 'Set': 9, 'Ott': 10, 'Nov': 11, 'Dic': 12
             };
 
-            //Gestione del submit del form
+            //festione del submit del form
             filterForm.addEventListener('submit', function(e) {
-                //Previeni il ricaricamento della pagina
+                //previene il ricaricamento della pagina
                 e.preventDefault(); 
-                //Applica i filtri
+                //applica i filtri
                 applyFilters(); 
             });
 
-            //Gestione del reset
+            //gestione del reset
             resetButton.addEventListener('click', function() {
                 //Resetta il select
                 monthSelect.value = '';                
-                //Mostra tutte le colonne e righe
+                //mostra tutte le colonne e righe
                 showAllColumnsAndRows();
             });
 
-            //Funzione per applicare i filtri
+            //applicare i filtri
             function applyFilters() {
                 const selectedMonth = monthSelect.value;                
-                //Se nessun mese è selezionato, mostra tutto
+                //se nessun mese è selezionato, mostra tutto
                 if (!selectedMonth) {
                     showAllColumnsAndRows();
                     return;
                 }
                 
-                //Converti il nome del mese in numero (1-12)
+                //converti il nome del mese in numero 
                 const monthNumber = monthMap[selectedMonth];
                 
-                //Nascondi tutte le colonne dei mesi
+                //nascondi tutte le colonne dei mesi
                 document.querySelectorAll('.col-mese').forEach(col => {
                     col.style.display = 'none';
                 });
                 
-                //Mostra solo la colonna del mese selezionato
+                //mostra solo la colonna del mese selezionato
                 document.querySelectorAll(`.col-${monthNumber}`).forEach(col => {
                     col.style.display = '';
                 });
                 
-                //Mostra sempre la colonna dei nomi
+                //mostra sempre la colonna dei nomi
                 document.querySelectorAll('th:first-child, td:first-child').forEach(col => {
                     col.style.display = '';
                 });
 
-                //Filtra le righe: mostra solo quelle con immagini nel mese selezionato
+                //filtra le righe: mostra solo quelle con immagini nel mese selezionato
                 document.querySelectorAll('tbody tr').forEach(riga => {
                     const cellaMese = riga.querySelector(`.col-${monthNumber}`);
                     if (cellaMese && cellaMese.querySelector('img')) {
-                        //Mostra riga
+                        //mostra riga
                         riga.style.display = ''; 
                     } else {
-                        // Nascondi riga
+                        //nascondi riga
                         riga.style.display = 'none'; 
                     }
                 });
             }
 
-            //Funzione per mostrare tutte le colonne e righe
+            //mostra tutte le colonne e righe
             function showAllColumnsAndRows() {
-                //Mostra tutte le colonne
+                //mostra tutte le colonne
                 document.querySelectorAll('.col-mese').forEach(col => {
                     col.style.display = '';
                 });
                 
-                //Mostra tutte le righe
+                //mostra tutte le righe
                 document.querySelectorAll('tbody tr').forEach(riga => {
                     riga.style.display = '';
                 });
             }
             
-            //Applica i filtri all'avvio se ci sono parametri nell'URL
+            //applica i filtri all'avvio se ci sono parametri nell'URL
             const urlParams = new URLSearchParams(window.location.search);
+            //verifica se è presente il parametro 'month' nell'URL
             if (urlParams.has('month')) {
+                //ottiene il valore del parametro 'month'
                 const monthParam = urlParams.get('month');
+                //controlla se il valore ricevuto esiste in un oggetto monthMap
                 if (monthMap.hasOwnProperty(monthParam)) {
+                    //imposta il valore di un dropdown select con l'ID 'monthSelect'
                     monthSelect.value = monthParam;
+                    //applica i filtri in base al mese selezionato
                     applyFilters();
                 }
             }

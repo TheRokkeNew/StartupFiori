@@ -10,7 +10,6 @@ class FlowerSeeder extends Seeder
 {   
     //Metodo run: esegue il popolamento della tabella flowers
     public function run(): void{
-        //Definizione di un array multidimensionale contenente tutti i fiori da inserire
         $flowers = [
             //rosa
             [
@@ -952,7 +951,7 @@ class FlowerSeeder extends Seeder
         ];           
         //Crea ogni fiore nel database 
         foreach ($flowers as $flower) {
-            Flower::create($flower); // Utilizza il metodo create del modello 
+            Flower::create($flower); 
         }
     }
 }
