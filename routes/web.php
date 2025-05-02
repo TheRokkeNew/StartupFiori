@@ -38,8 +38,6 @@ Route::put('/admin/panel/{user}', [PermissionsController::class, 'AdminEditUser'
 Route::delete("/admin/panel/{user}",[PermissionsController::class,"AdminDestroyUser"])->name("admin.users.destroy")->middleware('auth', 'role:admin');
 
 
-// Route::get("/admin",[PermissionsController::class,"GetPermissions"])->name("admin.permissions");
-
 
 Route::get('/userProfile',[UserController::class,'showUserProfile'])->name('showUserProfile');
 Route::post('/userProfile',[UserController::class,'updateUserProfile'])->name('updateUserProfile');

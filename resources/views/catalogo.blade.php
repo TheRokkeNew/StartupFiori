@@ -219,7 +219,7 @@ $(document).ready(function() {
                   <p class="card-text">Stagione: ${flower.season}</p>
                   <p class="card-text">Tipo: ${flower.type}</p>
 
-				  @role('admin')
+				      @role('admin')
                   <div class="d-flex justify-content-between mt-3">
                     <a href="/flowers/${flower.id}/edit" class="btn btn-sm btn-pink">✏️ Modifica</a>
                     <form method="POST" action="/flowers/${flower.id}" onsubmit="return confirm('Sicuro di voler eliminare questo fiore?');">

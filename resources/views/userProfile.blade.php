@@ -76,10 +76,6 @@
                     <h6 class="mb-0">Statistiche</h6>
                 </div>
                 <div class="card-body">
-                    <div class="d-flex justify-content-between py-2 border-bottom">
-                        <span>Preferiti</span>
-                        <span class="fw-bold">5</span>
-                    </div>
                     <div class="d-flex justify-content-between py-2">
                         <span>Membro dal</span>
                         <span class="fw-bold">{{ auth()->user()->created_at->format('d/m/Y') }}</span>
