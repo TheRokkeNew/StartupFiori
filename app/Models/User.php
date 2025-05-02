@@ -12,13 +12,19 @@ class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     use HasFactory, Notifiable, HasRoles;
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
     use HasFactory, Notifiable,HasRoles;
 =======
     use HasFactory, Notifiable, HasRoles;
 >>>>>>> 1bd266c01f0e4836233210e2c917ab1aa837dacd
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
     /**
