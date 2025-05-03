@@ -23,7 +23,7 @@ class SendEventEmails extends Command
     
     
     //$today = now()->format('Y-m-d');
-    $today = '2025-02-14'; //QUI FORZO IL GIORNO 24-02-2025 PER VEDERE SE FUNZIONA
+    $today = '2025-12-25'; //QUI FORZO IL GIORNO 24-02-2025 PER VEDERE SE FUNZIONA
     $this->info("Data odierna: {$today}");
 
     //Trova eventi da EventsTableSeeder con data=oggi

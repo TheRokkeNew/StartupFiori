@@ -53,14 +53,13 @@
         
         <p>{!! nl2br($event->content) !!}</p>
         
-        <a href="{{ url('/offerta/' . $event->slug) }}" class="btn">
+        <a href="{{ url('http://127.0.0.1:8000') }}" class="btn">
             Scopri l'offerta
         </a>
     </div>
     
     <div class="footer">
         <p>© {{ date('Y') }} FlowerFormula. Tutti i diritti riservati.</p>
-        <p><a href="{{ url('/unsubscribe') }}" style="color: #aaa;">Disiscriviti</a></p>
     </div>
 </body>
 </html>
