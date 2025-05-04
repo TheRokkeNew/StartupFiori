@@ -1,4 +1,6 @@
 <?php
+
+//Definisce la struttura del modello Flower (fiore) nel database
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;

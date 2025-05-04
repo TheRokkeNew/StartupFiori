@@ -44,7 +44,7 @@
 <body>
     <!--intestazione email-->
     <div class="header">
-        <img src="{{ asset('images/logo.png') }}" alt="FlowerFormula">
+        <img src="{{ asset('images/immagine.jpg') }}" alt="FlowerFormula Logo" style="height: 50px;">
     </div>
     
     <div class="content">

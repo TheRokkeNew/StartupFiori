@@ -6,11 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     * Metodo up: viene eseguito quando la migrazione viene applicata
-     * Crea la tabella 'flowers' nel database
-     */
+    
+    //Crea la tabella 'flowers' nel database
+     
     public function up(): void
     {
         Schema::create('flowers', function (Blueprint $table) {
@@ -29,11 +27,9 @@ return new class extends Migration
         });
     }   
 
-    /**
-     * Reverse the migrations.
-     * Metodo down: viene eseguito quando la migrazione viene rollbackata
-     * Elimina la tabella 'flowers' dal database
-     */
+    
+    //Elimina la tabella 'flowers' dal database
+     
     public function down(): void
     {
         Schema::dropIfExists('flowers'); // Eliminazione della tabella
