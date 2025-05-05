@@ -30,6 +30,7 @@ class EventMail extends Mailable
                     ->with([
                         'user' => $this->user,
                         'event' => $this->event,
+                    
                     ]);
     }
 }

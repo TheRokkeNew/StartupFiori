@@ -39,24 +39,44 @@ class SendEventEmails extends Command
         return;
     }
 
-    //Recupera solo gli utenti che hanno verificato l'email NON SAPREI SE HA QUALCHE COLLEGAMENTO CON LA REGISTRAZIONE
-    $users = User::whereNotNull('email_verified_at')->get();
-    $this->info("Utenti verificati: {$users->count()}");
+    //Recupera solo gli utenti che hanno verificato l'email
+    //$verifiedUsers = User::whereNotNull('email_verified_at')
+    //->get(['id', 'name', 'email']);
+    $users = User::all();
+    $this->info("Utenti verificati trovati: {$users->count()}");
 
+    if ($users->isEmpty()) {
+        $this->error("Nessun utente verificato trovato!");
+        return;
+    }
+
+    
+    $successCount = 0;
+    $failCount = 0;
     //Doppio ciclo per inviare a tutti gli utenti per ogni evento trovato
     foreach ($events as $event) {
+        $this->info("\nInvio per evento: {$event->name}");
+        
         foreach ($users as $user) {
             try {
+                // 5. Invio email individuale
                 Mail::to($user->email)
                     ->send(new EventMail($user, $event));
                 
-                $this->info("Inviata a {$user->email}");
+                $this->info("   ✅ Inviata a: {$user->email}");
+                $successCount++;
+                
             } catch (\Exception $e) {
-                $this->error("Errore per {$user->email}: {$e->getMessage()}");
+                $this->error("   ❌ Fallita a: {$user->email} - {$e->getMessage()}");
+                $failCount++;
             }
         }
     }
 
+    // 6. Report finale
+    $this->info("\n=== RIEPILOGO ===");
+    $this->info("Email inviate con successo: {$successCount}");
+    $this->info("Email fallite: {$failCount}");
     $this->info("=== OPERAZIONE COMPLETATA ===");
 }
 }
