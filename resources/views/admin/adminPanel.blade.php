@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Pannello Admin - FamilyFinance')
+@section('title', 'Pannello Admin - FlowerFormula')
 
 @section('content')
 <div class="container">
